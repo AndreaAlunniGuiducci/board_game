@@ -1,10 +1,11 @@
 import { Game } from "../../types/game.types";
 // import craniumImage from "/image/cranium_image.jpg";
+import azulImage from "./image/azul.jpg";
 
 const games: Game[] = [
   {
     id: "001",
-    image: "/image/cranium_image.jpg",
+    image: azulImage,
     name: "Cranium",
     categories: ["party_game"],
     minPlayer: 4,

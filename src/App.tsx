@@ -1,15 +1,39 @@
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter, createHashRouter } from "react-router-dom";
 import "./App.scss";
 import Home from "./pages/Home/Home";
 import Header from "./components/organisms/Header/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import GamesList from "./pages/GamesList/GamesList";
 import GameDescription from "./pages/GameDescription/GameDescription";
-import { basename } from "path";
 
-const router = createBrowserRouter(
+// const router = createBrowserRouter(
+//   [
+//     {
+//       element: (
+//         <div>
+//           <Header />
+//           <Outlet />
+//         </div>
+//       ),
+//       children: [
+//         { path: "/", element: <Home className="pageWithHeader" /> },
+//         {
+//           path: "/lista_giochi",
+//           element: <GamesList className="pageWithHeader" />,
+//         },
+//         {
+//           path: "/gioco/:gameId",
+//           element: <GameDescription className="pageWithHeader" />,
+//         },
+//       ],
+//     },
+//   ],
+//   { basename: "/board_game" }
+// );
+const router = createHashRouter(
   [
     {
+      path: "/",
       element: (
         <div>
           <Header />
@@ -29,7 +53,7 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  // { basename: "/boardgame" }
+  { basename: "/board_game" }
 );
 
 function App() {

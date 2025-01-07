@@ -5,7 +5,7 @@ import styles from "./Home.module.scss";
 
 const Home = ({ className }: any) => {
   const filteredGames = () => {
-    addGames(games)();
+    // addGames(games)();
   };
 
   useEffect(() => {
