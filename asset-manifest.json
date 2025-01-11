@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/board_game/static/css/main.8be0ac0e.css",
-    "main.js": "/board_game/static/js/main.341a9e1b.js",
+    "main.js": "/board_game/static/js/main.fa8cb03a.js",
     "static/js/453.f8c5b444.chunk.js": "/board_game/static/js/453.f8c5b444.chunk.js",
     "static/media/azul.jpg": "/board_game/static/media/azul.f756881e16363ff97260.jpg",
     "index.html": "/board_game/index.html",
     "main.8be0ac0e.css.map": "/board_game/static/css/main.8be0ac0e.css.map",
-    "main.341a9e1b.js.map": "/board_game/static/js/main.341a9e1b.js.map",
+    "main.fa8cb03a.js.map": "/board_game/static/js/main.fa8cb03a.js.map",
     "453.f8c5b444.chunk.js.map": "/board_game/static/js/453.f8c5b444.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8be0ac0e.css",
-    "static/js/main.341a9e1b.js"
+    "static/js/main.fa8cb03a.js"
   ]
 }
