@@ -9,11 +9,11 @@ import { getFilteredGames, getGames } from "../../services";
 import Modal from "../../components/atoms/Modal/Modal";
 import { Spinner } from "react-bootstrap";
 
-interface GameFilter {
+export interface GameFilter {
   name: string | undefined;
-  age: number | undefined;
-  numberPlayer: number | undefined;
-  gameTime: number | undefined;
+  age: string | undefined;
+  numberPlayer: string | undefined;
+  gameTime: string | undefined;
 }
 
 const GamesList = ({ className }: any) => {
@@ -42,8 +42,9 @@ const GamesList = ({ className }: any) => {
     setGamesList([]);
     const filterTheGame = async () => {
       // const filteredGames = await getFilteredGames(gameFilter);
-      const filteredGames = await getFilteredGames();
-      // setGamesList(filteredGames.data);
+      const filteredGames = await getFilteredGames(gameFilter)();
+      console.log("filteredGames", filteredGames);
+      setGamesList(filteredGames ?? []);
     };
     filterTheGame();
   }, [gameFilter]);

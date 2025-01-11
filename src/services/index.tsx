@@ -1,6 +1,16 @@
+import { GameFilter } from "../pages/GamesList/GamesList";
 import { Game } from "../types/game.types";
 import { db } from "../utils/firebase-config";
-import { setDoc, doc, addDoc, collection, getDocs } from "firebase/firestore";
+import {
+  setDoc,
+  doc,
+  addDoc,
+  collection,
+  getDocs,
+  query,
+  where,
+  orderBy,
+} from "firebase/firestore";
 // import {
 //   createUserWithEmailAndPassword,
 //   signInWithEmailAndPassword,
@@ -16,21 +26,40 @@ export const addGames = (games: Game[]) => async () => {
   }
 };
 
-export const getFilteredGames = () => async () => {
+export const getFilteredGames = (filter: GameFilter) => async () => {
+  console.log("GAME FILTER", filter);
   try {
-    const prod = getDocs(collection(db, `/games`)).then((data) => {
-      let products = data.docs.map((i) => i.data());
-      return products;
-    });
-    return prod;
+    const q = query(
+      collection(db, "games"),
+      where("playerAge", "<", parseInt(filter.age ?? "100")),
+      where("playTime", "<", parseInt(filter.gameTime ?? "100")),
+      where("maxPlayer", "<=", parseInt(filter.numberPlayer ?? "100"))
+      // where("minPlayer", ">", parseInt(filter.numberPlayer ?? "0"))
+    );
+
+    // Esegui la query e ottieni i documenti
+    const querySnapshot = await getDocs(q);
+    if (querySnapshot.empty) {
+      console.log("GAME Nessun documento trovato con questo filtro.");
+    }
+    const items = querySnapshot.docs.map((doc) => doc.data());
+    return items.filter(
+      (game) =>
+        game.name.includes(filter.name ?? "") &&
+        game.minPlayer <= parseInt(filter.numberPlayer ?? "100")
+    );
+    // const prod = getDocs(collection(db, `/games`)).then((data) => {
+    //   let products = data.docs.map((i) => i.data());
+    //   return products;
+    // });
   } catch (err) {
-    console.log(err);
+    console.log("GAME ERR", err);
   }
 };
 
 export const getGames = () => async () => {
   try {
-    const prod = getDocs(collection(db, `/games`)).then((data) => {
+    const prod = getDocs(collection(db, `games`)).then((data) => {
       let products = data.docs.map((i) => i.data());
       return products;
     });

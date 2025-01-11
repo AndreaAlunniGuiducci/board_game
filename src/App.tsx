@@ -53,7 +53,6 @@ const router = createHashRouter(
       ],
     },
   ],
-  { basename: "/board_game" }
 );
 
 function App() {
