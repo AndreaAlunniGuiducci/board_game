@@ -26,11 +26,17 @@ const GamesList = ({ className }: any) => {
     numberPlayer: undefined,
   });
   const [gamesList, setGamesList] = useState<any>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const getGamesList = async () => {
-    const response = await getGames();
+  console.log("GAMES LIST GAMELIT STATE", gamesList);
+
+  const getGamesList = () => {
+    setLoading(true);
+    const response = getGames();
     response().then((data: any) => {
       setGamesList(data);
+      console.log("GAME LIST", data);
+      setLoading(false);
     });
   };
 
@@ -41,10 +47,12 @@ const GamesList = ({ className }: any) => {
   useEffect(() => {
     setGamesList([]);
     const filterTheGame = async () => {
-      // const filteredGames = await getFilteredGames(gameFilter);
+      setLoading(true);
       const filteredGames = await getFilteredGames(gameFilter)();
-      console.log("filteredGames", filteredGames);
-      setGamesList(filteredGames ?? []);
+
+      setLoading(false);
+      setGamesList(filteredGames);
+      console.log("GAME LIST WITH FILTER", filteredGames);
     };
     filterTheGame();
   }, [gameFilter]);
@@ -113,26 +121,28 @@ const GamesList = ({ className }: any) => {
           ]}
         />
       </div>
-      {gamesList.length < 1 ? (
+      {loading ? (
         <Modal className={styles.loadingModal}>
           <Spinner />
         </Modal>
       ) : (
         <div className={styles.cardsWrapper}>
-          {gamesList.map((g: any) => (
-            <GameCard
-              key={g.id}
-              onClick={() => navigate("/gioco/" + g.id)}
-              categories={g.categories}
-              description={g.description}
-              image={g.image}
-              maxPlayer={g.maxPlayer}
-              minPlayer={g.minPlayer}
-              name={g.name}
-              playTime={g.playTime}
-              playerAge={g.playerAge}
-            />
-          ))}
+          {gamesList.length > 0
+            ? gamesList.map((g: any) => (
+                <GameCard
+                  key={g.id}
+                  onClick={() => navigate("/gioco/" + g.id)}
+                  categories={g.categories}
+                  description={g.description}
+                  image={g.image}
+                  maxPlayer={g.maxPlayer}
+                  minPlayer={g.minPlayer}
+                  name={g.name}
+                  playTime={g.playTime}
+                  playerAge={g.playerAge}
+                />
+              ))
+            : "Empty STATE"}
         </div>
       )}
     </div>

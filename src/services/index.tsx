@@ -1,16 +1,14 @@
+import {
+  collection,
+  doc,
+  getDocs,
+  query,
+  setDoc,
+  where
+} from "firebase/firestore";
 import { GameFilter } from "../pages/GamesList/GamesList";
 import { Game } from "../types/game.types";
 import { db } from "../utils/firebase-config";
-import {
-  setDoc,
-  doc,
-  addDoc,
-  collection,
-  getDocs,
-  query,
-  where,
-  orderBy,
-} from "firebase/firestore";
 // import {
 //   createUserWithEmailAndPassword,
 //   signInWithEmailAndPassword,
@@ -27,7 +25,6 @@ export const addGames = (games: Game[]) => async () => {
 };
 
 export const getFilteredGames = (filter: GameFilter) => async () => {
-  console.log("GAME FILTER", filter);
   try {
     const q = query(
       collection(db, "games"),
@@ -43,14 +40,14 @@ export const getFilteredGames = (filter: GameFilter) => async () => {
       console.log("GAME Nessun documento trovato con questo filtro.");
     }
     const items = querySnapshot.docs.map((doc) => doc.data());
-    return items.filter((game) => {
-      console.log("GAME FILTER INCLUDES", game.name.toLowerCase());
-      console.log("GAME FILTER FILTER", filter.name);
+    const filteredItems = items.filter((game) => {
       return (
         game.name.toLowerCase().includes(filter.name?.toLowerCase() ?? "") &&
         game.minPlayer <= parseInt(filter.numberPlayer ?? "100")
       );
     });
+    console.log("game FILTERED ITEMS", filteredItems);
+    return filteredItems;
     // const prod = getDocs(collection(db, `/games`)).then((data) => {
     //   let products = data.docs.map((i) => i.data());
     //   return products;
