@@ -30,8 +30,8 @@ export const getFilteredGames = (filter: GameFilter) => async () => {
       collection(db, "games"),
       where("playerAge", "<=", parseInt(filter.age ?? "100")),
       where("playTime", "<=", parseInt(filter.gameTime ?? "100")),
-      where("maxPlayer", "<=", parseInt(filter.numberPlayer ?? "100"))
-      // where("minPlayer", ">", parseInt(filter.numberPlayer ?? "0"))
+      // where("maxPlayer", "<=", parseInt(filter.numberPlayer ?? "100"))
+      where("minPlayer", "<=", parseInt(filter.numberPlayer ?? "100"))
     );
 
     // Esegui la query e ottieni i documenti
@@ -43,7 +43,7 @@ export const getFilteredGames = (filter: GameFilter) => async () => {
     const filteredItems = items.filter((game) => {
       return (
         game.name.toLowerCase().includes(filter.name?.toLowerCase() ?? "") &&
-        game.minPlayer <= parseInt(filter.numberPlayer ?? "100")
+        game.maxPlayer >= parseInt(filter.numberPlayer ?? "0")
       );
     });
     console.log("game FILTERED ITEMS", filteredItems);
