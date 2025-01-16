@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import GameCard from "../../components/organisms/GameCard/GameCard";
+// import GameCard from "../../components/organisms/GameCard/GameCard";
 import styles from "./GamesList.module.scss";
 import Accordion from "../../components/organisms/Accordion/Accordion";
 import { Filter } from "react-bootstrap-icons";
@@ -8,6 +8,9 @@ import { useEffect, useState } from "react";
 import { getFilteredGames, getGames } from "../../services";
 import Modal from "../../components/atoms/Modal/Modal";
 import { Spinner } from "react-bootstrap";
+import GameCard from "../../components/organisms/GameCardAlt3";
+// import GameCard from "../../components/organisms/GameCardAlt2";
+// import GameCard from "../../components/organisms/GameCardAlt";
 
 export interface GameFilter {
   name: string | undefined;
@@ -129,17 +132,27 @@ const GamesList = ({ className }: any) => {
         <div className={styles.cardsWrapper}>
           {gamesList.length > 0
             ? gamesList.map((g: any) => (
+                // <GameCard
+                //   key={g.id}
+                //   onClick={() => navigate("/gioco/" + g.id)}
+                //   categories={g.categories}
+                //   description={g.description}
+                //   image={g.image}
+                //   maxPlayer={g.maxPlayer}
+                //   minPlayer={g.minPlayer}
+                //   name={g.name}
+                //   playTime={g.playTime}
+                //   playerAge={g.playerAge}
+                // />
                 <GameCard
-                  key={g.id}
-                  onClick={() => navigate("/gioco/" + g.id)}
-                  categories={g.categories}
-                  description={g.description}
-                  image={g.image}
-                  maxPlayer={g.maxPlayer}
-                  minPlayer={g.minPlayer}
-                  name={g.name}
+                  imageUrl={g.image}
+                  title={g.name}
                   playTime={g.playTime}
-                  playerAge={g.playerAge}
+                  minPlayers={g.minPlayer}
+                  maxPlayers={g.maxPlayer}
+                  recommendedAge={g.playerAge}
+                  onDetailClick={() => navigate("/gioco/" + g.id)}
+                  onBuyClick={() => navigate("/gioco/" + g.id)}
                 />
               ))
             : "Empty STATE"}

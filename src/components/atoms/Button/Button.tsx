@@ -1,10 +1,23 @@
-import { Button as BootsrtapButton } from "react-bootstrap";
 import { ButtonProps as BootsrtapButtonProps } from "react-bootstrap";
+import styles from "./Button.module.scss";
+interface ButtonProps extends BootsrtapButtonProps {
+  theme?: "blue" | "green";
+}
 
-interface ButtonProps extends BootsrtapButtonProps {}
-
-const Button = ({ children, ...props }: ButtonProps) => {
-  return <BootsrtapButton {...props}>{children}</BootsrtapButton>;
+const Button = ({
+  children,
+  className,
+  theme = "blue",
+  ...props
+}: ButtonProps) => {
+  return (
+    <button
+      className={styles.button + " " + styles[theme] + " " + className}
+      {...props}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Button;

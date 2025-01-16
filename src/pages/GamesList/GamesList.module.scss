@@ -15,12 +15,15 @@
     justify-content: center;
   }
   .cardsWrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-    [class*="gameCard"] {
-      width: 30%;
-    }
+    // display: flex;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
+    // gap: 8px;
+    // [class*="gameCard"] {
+    //   width: 30%;
+    // }
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
   }
 }
