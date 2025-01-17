@@ -50,7 +50,7 @@ const GameCard = ({
             className={styles.buyButton}
             onClick={onBuyClick}
           >
-            Acquista
+            Aggiungi alla serata
           </Button>
         </div>
       </div>

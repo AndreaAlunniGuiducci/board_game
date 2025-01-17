@@ -1,11 +1,28 @@
 import { Game } from "../../types/game.types";
 // import craniumImage from "/image/cranium_image.jpg";
 import azulImage from "./image/azul.jpg";
+import azulQueenGardenImage from "./image/azul-il-giardino-della-regina.jpg";
+import craniumImage from "./image/cranium.jpg";
+import callistoImage from "./image/callisto.jpg";
+import kalidosJunioImage from "./image/kalidosJunior.jpg";
+import genialeImage from "./image/geniale.jpg";
+import olympusImage from "./image/olympus.jpg";
+import catanImage from "./image/catan.png";
+import lilleroImage from "./image/lillero.png";
+import dixitImage from "./image/dixit.jpg";
+import kawoomImage from "./image/ka-woom.jpg";
+import sherlockImage from "./image/sherlock.jpg";
+import jokerImage from "./image/joker.jpg";
+import level9Image from "./image/level-9.jpg";
+import pandemicImage from "./image/pandemic.jpg";
+import tubimagiciImage from "./image/tubiMagici.jpg";
+import topTenImage from "./image/topTen.jpg";
+import tokyoTrainImage from "./image/tokyoTrain.png";
 
-const games: Game[] = [
+export const games: Game[] = [
   {
     id: "001",
-    image: azulImage,
+    image: craniumImage,
     name: "Cranium",
     categories: ["party_game"],
     minPlayer: 4,
@@ -17,7 +34,7 @@ const games: Game[] = [
   },
   {
     id: "002",
-    image: "",
+    image: callistoImage,
     name: "Callisto",
     categories: ["euro", "filler"],
     maxPlayer: 4,
@@ -29,8 +46,8 @@ const games: Game[] = [
   },
   {
     id: "003",
-    image: "",
-    name: "Kaleidos",
+    image: kalidosJunioImage,
+    name: "Kaleidos junior",
     categories: ["kids"],
     minPlayer: 2,
     maxPlayer: 99,
@@ -41,7 +58,7 @@ const games: Game[] = [
   },
   {
     id: "004",
-    image: "",
+    image: genialeImage,
     name: "Geniale",
     categories: ["euro"],
     minPlayer: 1,
@@ -53,7 +70,7 @@ const games: Game[] = [
   },
   {
     id: "005",
-    image: "",
+    image: olympusImage,
     name: "Olympus",
     categories: ["euro", "management"],
     minPlayer: 3,
@@ -65,7 +82,7 @@ const games: Game[] = [
   },
   {
     id: "006",
-    image: "",
+    image: catanImage,
     name: "Catan",
     categories: ["euro"],
     minPlayer: 2,
@@ -77,7 +94,7 @@ const games: Game[] = [
   },
   {
     id: "007",
-    image: "",
+    image: lilleroImage,
     name: "Lillero",
     categories: ["management", "euro"],
     minPlayer: 2,
@@ -89,7 +106,7 @@ const games: Game[] = [
   },
   {
     id: "008",
-    image: "",
+    image: dixitImage,
     name: "Dixit",
     categories: ["party_game"],
     minPlayer: 2,
@@ -101,7 +118,7 @@ const games: Game[] = [
   },
   {
     id: "009",
-    image: "",
+    image: kawoomImage,
     name: "Ka-Woom",
     categories: ["kids"],
     minPlayer: 2,
@@ -113,7 +130,7 @@ const games: Game[] = [
   },
   {
     id: "010",
-    image: "",
+    image: sherlockImage,
     name: "Sherlock Holmes",
     categories: ["investigatives", "party_game"],
     minPlayer: 1,
@@ -125,7 +142,7 @@ const games: Game[] = [
   },
   {
     id: "011",
-    image: "",
+    image: jokerImage,
     name: "Joker: a diabolical party game",
     categories: ["party_game", "cards"],
     minPlayer: 3,
@@ -137,7 +154,7 @@ const games: Game[] = [
   },
   {
     id: "012",
-    image: "",
+    image: level9Image,
     name: "Level 9",
     categories: ["management"],
     minPlayer: 1,
@@ -149,7 +166,7 @@ const games: Game[] = [
   },
   {
     id: "013",
-    image: "",
+    image: pandemicImage,
     name: "Pandemic - una nuova sfida",
     categories: ["war_game", "cooperative"],
     minPlayer: 2,
@@ -161,7 +178,7 @@ const games: Game[] = [
   },
   {
     id: "014",
-    image: "",
+    image: tubimagiciImage,
     name: "Tubi magici",
     categories: ["euro", "party_game", "filler"],
     minPlayer: 1,
@@ -173,7 +190,7 @@ const games: Game[] = [
   },
   {
     id: "015",
-    image: "",
+    image: topTenImage,
     name: "Top ten",
     categories: ["party_game", "cooperative"],
     minPlayer: 4,
@@ -185,7 +202,7 @@ const games: Game[] = [
   },
   {
     id: "016",
-    image: "",
+    image: tokyoTrainImage,
     name: "Tokyo train",
     categories: ["party_game", "filler"],
     minPlayer: 4,
@@ -197,7 +214,7 @@ const games: Game[] = [
   },
   {
     id: "017",
-    image: "",
+    image: azulImage,
     name: "Azul",
     categories: ["euro", "management"],
     minPlayer: 2,
@@ -209,7 +226,7 @@ const games: Game[] = [
   },
   {
     id: "018",
-    image: "",
+    image: azulQueenGardenImage,
     name: "Azul - Il giardino della regina",
     categories: ["euro", "management"],
     minPlayer: 2,

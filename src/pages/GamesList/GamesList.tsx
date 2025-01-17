@@ -9,6 +9,7 @@ import { getFilteredGames, getGames } from "../../services";
 import Modal from "../../components/atoms/Modal/Modal";
 import { Spinner } from "react-bootstrap";
 import GameCard from "../../components/organisms/GameCardAlt3";
+import games from "../../utils/games_list/games_list";
 // import GameCard from "../../components/organisms/GameCardAlt2";
 // import GameCard from "../../components/organisms/GameCardAlt";
 
@@ -131,7 +132,7 @@ const GamesList = ({ className }: any) => {
       ) : (
         <div className={styles.cardsWrapper}>
           {gamesList.length > 0
-            ? gamesList.map((g: any) => (
+            ? games.map((g: any) => (
                 // <GameCard
                 //   key={g.id}
                 //   onClick={() => navigate("/gioco/" + g.id)}
