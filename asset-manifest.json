@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/board_game/static/css/main.fb1c99b2.css",
-    "main.js": "/board_game/static/js/main.13756a5d.js",
+    "main.css": "/board_game/static/css/main.3b9fce49.css",
+    "main.js": "/board_game/static/js/main.7a4f4ab1.js",
     "static/js/453.f8c5b444.chunk.js": "/board_game/static/js/453.f8c5b444.chunk.js",
     "static/media/lillero.png": "/board_game/static/media/lillero.5514b8893fcfd301f157.png",
     "static/media/azul.jpg": "/board_game/static/media/azul.f756881e16363ff97260.jpg",
@@ -15,6 +15,7 @@
     "static/media/azul-il-giardino-della-regina.jpg": "/board_game/static/media/azul-il-giardino-della-regina.69edb2d6a7a2d9297134.jpg",
     "static/media/kalidosJunior.jpg": "/board_game/static/media/kalidosJunior.dc24f96418be1286fd1a.jpg",
     "static/media/ka-woom.jpg": "/board_game/static/media/ka-woom.c190757118c744d5db21.jpg",
+    "static/media/13Indizi.jpg": "/board_game/static/media/13Indizi.53f009d3d88c716316b5.jpg",
     "static/media/sherlock.jpg": "/board_game/static/media/sherlock.4a873b35c9c38fd40408.jpg",
     "static/media/callisto.jpg": "/board_game/static/media/callisto.76e46fc293d1bdb1e0c5.jpg",
     "static/media/cranium.jpg": "/board_game/static/media/cranium.6aebcff1882a549283a7.jpg",
@@ -22,12 +23,12 @@
     "static/media/tubiMagici.jpg": "/board_game/static/media/tubiMagici.07cdc97df67d16e1a043.jpg",
     "static/media/level-9.jpg": "/board_game/static/media/level-9.cdb9a3d9c0f7b538a2e5.jpg",
     "index.html": "/board_game/index.html",
-    "main.fb1c99b2.css.map": "/board_game/static/css/main.fb1c99b2.css.map",
-    "main.13756a5d.js.map": "/board_game/static/js/main.13756a5d.js.map",
+    "main.3b9fce49.css.map": "/board_game/static/css/main.3b9fce49.css.map",
+    "main.7a4f4ab1.js.map": "/board_game/static/js/main.7a4f4ab1.js.map",
     "453.f8c5b444.chunk.js.map": "/board_game/static/js/453.f8c5b444.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb1c99b2.css",
-    "static/js/main.13756a5d.js"
+    "static/css/main.3b9fce49.css",
+    "static/js/main.7a4f4ab1.js"
   ]
 }
