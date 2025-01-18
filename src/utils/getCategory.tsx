@@ -16,9 +16,9 @@ const getCategory = (category: Category) => {
       return "bambini";
     case "management":
       return "gestionale";
-    case "party_game":
+    case "party game":
       return "party game";
-    case "war_game":
+    case "war game":
       return "war game";
   }
 };

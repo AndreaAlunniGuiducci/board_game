@@ -11,6 +11,7 @@ interface GameCardProps {
   recommendedAge?: string;
   onDetailClick?: () => void;
   onBuyClick?: () => void;
+  categories?: string[];
 }
 
 const GameCard = ({
@@ -20,6 +21,7 @@ const GameCard = ({
   minPlayers,
   maxPlayers,
   recommendedAge,
+  categories,
   onDetailClick,
   onBuyClick,
 }: GameCardProps) => {
@@ -31,11 +33,25 @@ const GameCard = ({
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.details}>
-          <span>⏱ {playTime} min</span>
           <span>
-            👥 {minPlayers}-{maxPlayers} giocatori
+            ⏱ <br />
+            {playTime} min
           </span>
-          <span>👶 {recommendedAge} anni+</span>
+          <span>
+            👥 <br />
+            {minPlayers}-{maxPlayers} giocatori
+          </span>
+          <span>
+            👶 <br />
+            {recommendedAge} anni+
+          </span>
+        </div>
+        <div className={styles.categories}>
+          {categories?.map((category, index) => (
+            <span key={index} className={styles.category}>
+              {category}
+            </span>
+          ))}
         </div>
         <div className={styles.actions}>
           {/* <button className={styles.detailButton} onClick={onDetailClick}>

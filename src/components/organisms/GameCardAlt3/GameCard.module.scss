@@ -58,7 +58,22 @@
     border: 1px solid #ddd;
   }
 }
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
 
+.category {
+  background-color: #eef;
+  color: #3366cc;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
 .actions {
   display: flex;
   gap: 8px;

@@ -132,20 +132,9 @@ const GamesList = ({ className }: any) => {
       ) : (
         <div className={styles.cardsWrapper}>
           {gamesList.length > 0
-            ? games.map((g: any) => (
-                // <GameCard
-                //   key={g.id}
-                //   onClick={() => navigate("/gioco/" + g.id)}
-                //   categories={g.categories}
-                //   description={g.description}
-                //   image={g.image}
-                //   maxPlayer={g.maxPlayer}
-                //   minPlayer={g.minPlayer}
-                //   name={g.name}
-                //   playTime={g.playTime}
-                //   playerAge={g.playerAge}
-                // />
+            ? gamesList.map((g: any) => (
                 <GameCard
+                  categories={g.categories}
                   imageUrl={g.image}
                   title={g.name}
                   playTime={g.playTime}

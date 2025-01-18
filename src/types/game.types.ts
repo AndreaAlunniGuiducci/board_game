@@ -1,8 +1,8 @@
 export type Category =
   | "filler"
-  | "party_game"
+  | "party game"
   | "cards"
-  | "war_game"
+  | "war game"
   | "euro"
   | "american"
   | "kids"

@@ -18,13 +18,14 @@ import pandemicImage from "./image/pandemic.jpg";
 import tubimagiciImage from "./image/tubiMagici.jpg";
 import topTenImage from "./image/topTen.jpg";
 import tokyoTrainImage from "./image/tokyoTrain.png";
+import indizi13Image from "./image/13Indizi.jpg";
 
 export const games: Game[] = [
   {
     id: "001",
     image: craniumImage,
     name: "Cranium",
-    categories: ["party_game"],
+    categories: ["party game"],
     minPlayer: 4,
     maxPlayer: 99,
     playerAge: 16,
@@ -108,7 +109,7 @@ export const games: Game[] = [
     id: "008",
     image: dixitImage,
     name: "Dixit",
-    categories: ["party_game"],
+    categories: ["party game"],
     minPlayer: 2,
     maxPlayer: 6,
     playerAge: 8,
@@ -132,7 +133,7 @@ export const games: Game[] = [
     id: "010",
     image: sherlockImage,
     name: "Sherlock Holmes",
-    categories: ["investigatives", "party_game"],
+    categories: ["investigatives", "party game"],
     minPlayer: 1,
     maxPlayer: 99,
     playerAge: 10,
@@ -144,7 +145,7 @@ export const games: Game[] = [
     id: "011",
     image: jokerImage,
     name: "Joker: a diabolical party game",
-    categories: ["party_game", "cards"],
+    categories: ["party game", "cards"],
     minPlayer: 3,
     maxPlayer: 6,
     playerAge: 12,
@@ -168,7 +169,7 @@ export const games: Game[] = [
     id: "013",
     image: pandemicImage,
     name: "Pandemic - una nuova sfida",
-    categories: ["war_game", "cooperative"],
+    categories: ["war game", "cooperative"],
     minPlayer: 2,
     maxPlayer: 4,
     playerAge: 8,
@@ -180,7 +181,7 @@ export const games: Game[] = [
     id: "014",
     image: tubimagiciImage,
     name: "Tubi magici",
-    categories: ["euro", "party_game", "filler"],
+    categories: ["euro", "party game", "filler"],
     minPlayer: 1,
     maxPlayer: 8,
     playerAge: 10,
@@ -192,7 +193,7 @@ export const games: Game[] = [
     id: "015",
     image: topTenImage,
     name: "Top ten",
-    categories: ["party_game", "cooperative"],
+    categories: ["party game", "cooperative"],
     minPlayer: 4,
     maxPlayer: 9,
     playerAge: 14,
@@ -204,7 +205,7 @@ export const games: Game[] = [
     id: "016",
     image: tokyoTrainImage,
     name: "Tokyo train",
-    categories: ["party_game", "filler"],
+    categories: ["party game", "filler"],
     minPlayer: 4,
     maxPlayer: 8,
     playerAge: 8,
@@ -235,6 +236,30 @@ export const games: Game[] = [
     playTime: 69,
     description:
       "Re Manuel I ha commissionato ai migliori progettisti del Portogallo la realizzazione del giardino più straordinario di sempre per sua moglie, la Regina Maria di Aragona. In Azul – Il Giardino della Regina, i giocatori sono incaricati di realizzare uno splendido giardino per la graziosa moglie del Re, disponendo ad arte piante, alberi e ornamenti meravigliosi.Tramite un innovativo sistema di acquisizione delle tessere, caratteristica peculiare della serie di Azul, i giocatori dovranno scegliere attentamente quelle per decorare il proprio giardino. Solo i più abili progettisti prospereranno e riceveranno la benedizione della Regina.",
+  },
+  {
+    id: "019",
+    image: azulQueenGardenImage,
+    name: "13 Indizzi",
+    categories: ["euro", "management"],
+    minPlayer: 2,
+    maxPlayer: 6,
+    playerAge: 99,
+    playTime: 30,
+    description:
+      "Londra, 1899. La città è sconvolta da crimini efferati le cui soluzioni sono avvolte nel mistero. La polizia di Scotland Yard brancola nel buio e convoca i detective migliori, per un aiuto risolutivo nelle indagini. Ogni investigatore dovrà usare tutto il proprio fiuto per scovare quali dei 13 indizi riguardano il caso a lui assegnato. Interrogando i testimoni e consultando gli informatori segreti, sarà possibile formulare le accuse e scoprire il colpevole, il luogo e l’arma.",
+  },
+  {
+    id: "020",
+    image: indizi13Image,
+    name: "13 Indizzi",
+    categories: ["euro", "management"],
+    minPlayer: 2,
+    maxPlayer: 6,
+    playerAge: 99,
+    playTime: 30,
+    description:
+      "Londra, 1899. La città è sconvolta da crimini efferati le cui soluzioni sono avvolte nel mistero. La polizia di Scotland Yard brancola nel buio e convoca i detective migliori, per un aiuto risolutivo nelle indagini. Ogni investigatore dovrà usare tutto il proprio fiuto per scovare quali dei 13 indizi riguardano il caso a lui assegnato. Interrogando i testimoni e consultando gli informatori segreti, sarà possibile formulare le accuse e scoprire il colpevole, il luogo e l’arma.",
   },
 ];
 
