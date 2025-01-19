@@ -62,34 +62,38 @@ const AddedGamesList = ({ className }: any) => {
         <p className={styles.noBookings}>Non ci sono giochi prenotati.</p>
       ) : (
         <>
-          {dateList.map((item, index) => (
-            <div key={index} className={styles.dateSection}>
-              <h2 className={styles.dateHeader}>{item.date}</h2>
-              <ul className={styles.gamesList}>
-                {item.games.map((game, index) => (
-                  <li key={index} className={styles.gameItem}>
-                    <img
-                      src={game.image}
-                      alt={game.name}
-                      className={styles.gameImage}
-                    />
-                    <div className={styles.gameDetails}>
-                      <h3 className={styles.gameName}>{game.name}</h3>
-                      <div className={styles.detailWrapper}>
-                        <p className={styles.players}>
-                          Tempo: {game.playTime} minuti
-                        </p>
-                        <p className={styles.players}>
-                          Giocatori: {game.minPlayer} - {game.maxPlayer}
-                        </p>
-                        <p className={styles.players}>Età: {game.playerAge}+</p>
+          {dateList.map((item, index) => {
+            return item.games.length > 0 ? (
+              <div key={index} className={styles.dateSection}>
+                <h2 className={styles.dateHeader}>{item.date}</h2>
+                <ul className={styles.gamesList}>
+                  {item.games.map((game, index) => (
+                    <li key={index} className={styles.gameItem}>
+                      <img
+                        src={game.image}
+                        alt={game.name}
+                        className={styles.gameImage}
+                      />
+                      <div className={styles.gameDetails}>
+                        <h3 className={styles.gameName}>{game.name}</h3>
+                        <div className={styles.detailWrapper}>
+                          <p className={styles.players}>
+                            Tempo: {game.playTime} minuti
+                          </p>
+                          <p className={styles.players}>
+                            Giocatori: {game.minPlayer} - {game.maxPlayer}
+                          </p>
+                          <p className={styles.players}>
+                            Età: {game.playerAge}+
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null;
+          })}
         </>
       )}
     </div>

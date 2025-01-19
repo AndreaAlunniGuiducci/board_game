@@ -26,6 +26,7 @@ export const addGames = (games: Game[]) => async () => {
 
 export const addGamesToTheEvening =
   (games: Game[], date: string) => async () => {
+    console.log("GAMES IN CALL", games);
     try {
       await setDoc(doc(db, `booked/${date}`), { date, games });
       // games.map(async (game) => {

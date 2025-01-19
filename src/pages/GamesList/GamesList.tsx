@@ -88,7 +88,7 @@ const GamesList = ({ className }: any) => {
   }, [gameFilter]);
 
   useEffect(() => {
-    if (addedGames.length > 0 && date) {
+    if (addedGames.length >= 0 && date) {
       addGamesToTheEvening(addedGames, date)();
     }
   }, [addedGames]);
