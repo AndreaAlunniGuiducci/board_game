@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/board_game/static/css/main.3b9fce49.css",
-    "main.js": "/board_game/static/js/main.7a4f4ab1.js",
+    "main.css": "/board_game/static/css/main.3c050277.css",
+    "main.js": "/board_game/static/js/main.d8f9dd0d.js",
     "static/js/453.f8c5b444.chunk.js": "/board_game/static/js/453.f8c5b444.chunk.js",
     "static/media/lillero.png": "/board_game/static/media/lillero.5514b8893fcfd301f157.png",
     "static/media/azul.jpg": "/board_game/static/media/azul.f756881e16363ff97260.jpg",
@@ -23,12 +23,12 @@
     "static/media/tubiMagici.jpg": "/board_game/static/media/tubiMagici.07cdc97df67d16e1a043.jpg",
     "static/media/level-9.jpg": "/board_game/static/media/level-9.cdb9a3d9c0f7b538a2e5.jpg",
     "index.html": "/board_game/index.html",
-    "main.3b9fce49.css.map": "/board_game/static/css/main.3b9fce49.css.map",
-    "main.7a4f4ab1.js.map": "/board_game/static/js/main.7a4f4ab1.js.map",
+    "main.3c050277.css.map": "/board_game/static/css/main.3c050277.css.map",
+    "main.d8f9dd0d.js.map": "/board_game/static/js/main.d8f9dd0d.js.map",
     "453.f8c5b444.chunk.js.map": "/board_game/static/js/453.f8c5b444.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b9fce49.css",
-    "static/js/main.7a4f4ab1.js"
+    "static/css/main.3c050277.css",
+    "static/js/main.d8f9dd0d.js"
   ]
 }
