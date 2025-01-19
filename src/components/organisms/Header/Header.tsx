@@ -11,6 +11,7 @@ const Header = () => {
       <div className={styles.btnWrapper}>
         <Button  onClick={()=> navigate('/')}>Home</Button>
         <Button onClick={()=> navigate('/lista_giochi')}>Lista giochi</Button>
+        <Button onClick={()=> navigate('/prenotati')}>Lista serate</Button>
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import GamesList from "./pages/GamesList/GamesList";
 import GameDescription from "./pages/GameDescription/GameDescription";
 import GameDetailPage from "./pages/GameDescriptionAlt/GameDetailPage";
+import AddedGamesList from "./pages/AddedGames/AddedGamesList";
 
 // const router = createBrowserRouter(
 //   [
@@ -54,6 +55,10 @@ const router = createHashRouter([
       {
         path: "/gioco/:gameId",
         element: <GameDetailPage className="pageWithHeader" />,
+      },
+      {
+        path: "/prenotati",
+        element: <AddedGamesList className="pageWithHeader" />,
       },
     ],
   },

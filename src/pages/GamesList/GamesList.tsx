@@ -54,7 +54,6 @@ const GamesList = ({ className }: any) => {
     const response = getGames();
     response().then((data: any) => {
       setGamesList(data);
-      console.log("GAME LIST", data);
       setLoading(false);
     });
   };
@@ -101,7 +100,7 @@ const GamesList = ({ className }: any) => {
         onClose={() => setModalOpen(false)}
         onSave={handlePurchase}
       />
-      {date && <div>{date}</div>}
+      {date && <div> Stai scegliendo i giochi per il {date}</div>}
       <div className={styles.searchBar}>
         <Accordion
           items={[

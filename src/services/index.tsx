@@ -27,11 +27,12 @@ export const addGames = (games: Game[]) => async () => {
 export const addGamesToTheEvening =
   (games: Game[], date: string) => async () => {
     try {
-      games.map(async (game) => {
-        await setDoc(doc(db, `/booked/evening/${date}/${game.id}`), {
-          ...game,
-        });
-      });
+      await setDoc(doc(db, `/booked/${date}`), { games });
+      // games.map(async (game) => {
+      //   await setDoc(doc(db, `/booked/${date}`), {
+      //     ...game,
+      //   });
+      // });
     } catch (err) {
       console.log(err);
     }
@@ -59,7 +60,6 @@ export const getFilteredGames = (filter: GameFilter) => async () => {
         game.maxPlayer >= parseInt(filter.numberPlayer ?? "0")
       );
     });
-    console.log("game FILTERED ITEMS", filteredItems);
     return filteredItems;
     // const prod = getDocs(collection(db, `/games`)).then((data) => {
     //   let products = data.docs.map((i) => i.data());
@@ -73,9 +73,22 @@ export const getFilteredGames = (filter: GameFilter) => async () => {
 export const getGames = () => async () => {
   try {
     const prod = getDocs(collection(db, `games`)).then((data) => {
-      let products = data.docs.map((i) => i.data());
-      return products;
+      let games = data.docs.map((i) => i.data());
+      return games;
     });
+    return await prod;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getAddedGames = () => async () => {
+  try {
+    const prod = getDocs(collection(db, `booked`)).then((data) => {
+      let addedGames = data.docs.map((i) => i.data());
+      return addedGames;
+    });
+    prod.then((data) => console.log(data));
     return await prod;
   } catch (err) {
     console.log(err);
