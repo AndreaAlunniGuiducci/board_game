@@ -5,11 +5,17 @@ import Accordion from "../../components/organisms/Accordion/Accordion";
 import { Filter } from "react-bootstrap-icons";
 import Input from "../../components/atoms/Input/Input";
 import { useEffect, useState } from "react";
-import { getFilteredGames, getGames } from "../../services";
-import Modal from "../../components/atoms/Modal/Modal";
+import {
+  addGamesToTheEvening,
+  getFilteredGames,
+  getGames,
+} from "../../services";
 import { Spinner } from "react-bootstrap";
 import GameCard from "../../components/organisms/GameCardAlt3";
 import games from "../../utils/games_list/games_list";
+import { Game } from "../../types/game.types";
+import ModalDate from "../../components/organisms/Modal/Modal";
+import Modal from "../../components/atoms/Modal/Modal";
 // import GameCard from "../../components/organisms/GameCardAlt2";
 // import GameCard from "../../components/organisms/GameCardAlt";
 
@@ -29,11 +35,20 @@ const GamesList = ({ className }: any) => {
     gameTime: undefined,
     numberPlayer: undefined,
   });
-  const [gamesList, setGamesList] = useState<any>([]);
+  const [gamesList, setGamesList] = useState<Game[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [addedGames, setAddedGames] = useState<Game[]>([]);
+  const [date, setDate] = useState<string | undefined>();
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
-  console.log("GAMES LIST GAMELIT STATE", gamesList);
-
+  const handlePurchase = (date: string) => {
+    const parsedDate = new Date(date).toLocaleDateString("it-IT", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+    setDate(parsedDate.replaceAll("/", "-"));
+  };
   const getGamesList = () => {
     setLoading(true);
     const response = getGames();
@@ -42,6 +57,19 @@ const GamesList = ({ className }: any) => {
       console.log("GAME LIST", data);
       setLoading(false);
     });
+  };
+
+  const addGameInList = (game: Game) => {
+    if (date) {
+      setAddedGames([...addedGames, game]);
+      setModalOpen(false);
+    } else {
+      setModalOpen(true);
+    }
+  };
+
+  const removeGameInList = (game: Game) => {
+    setAddedGames(addedGames.filter((g) => g.id !== game.id));
   };
 
   useEffect(() => {
@@ -55,14 +83,25 @@ const GamesList = ({ className }: any) => {
       const filteredGames = await getFilteredGames(gameFilter)();
 
       setLoading(false);
-      setGamesList(filteredGames);
-      console.log("GAME LIST WITH FILTER", filteredGames);
+      setGamesList(filteredGames as Game[]);
     };
     filterTheGame();
   }, [gameFilter]);
 
+  useEffect(() => {
+    if (addedGames.length > 0 && date) {
+      addGamesToTheEvening(addedGames, date)();
+    }
+  }, [addedGames]);
+
   return (
     <div className={styles.gamesList + " " + className}>
+      <ModalDate
+        isOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+        onSave={handlePurchase}
+      />
+      {date && <div>{date}</div>}
       <div className={styles.searchBar}>
         <Accordion
           items={[
@@ -142,7 +181,9 @@ const GamesList = ({ className }: any) => {
                   maxPlayers={g.maxPlayer}
                   recommendedAge={g.playerAge}
                   onDetailClick={() => navigate("/gioco/" + g.id)}
-                  onBuyClick={() => navigate("/gioco/" + g.id)}
+                  onAddGame={() => addGameInList(g)}
+                  onRemoveGame={() => removeGameInList(g)}
+                  selected={addedGames.some((game) => game.id === g.id)}
                 />
               ))
             : "Empty STATE"}

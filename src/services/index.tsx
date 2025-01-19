@@ -4,7 +4,7 @@ import {
   getDocs,
   query,
   setDoc,
-  where
+  where,
 } from "firebase/firestore";
 import { GameFilter } from "../pages/GamesList/GamesList";
 import { Game } from "../types/game.types";
@@ -23,6 +23,19 @@ export const addGames = (games: Game[]) => async () => {
     console.log(err);
   }
 };
+
+export const addGamesToTheEvening =
+  (games: Game[], date: string) => async () => {
+    try {
+      games.map(async (game) => {
+        await setDoc(doc(db, `/booked/evening/${date}/${game.id}`), {
+          ...game,
+        });
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
 export const getFilteredGames = (filter: GameFilter) => async () => {
   try {

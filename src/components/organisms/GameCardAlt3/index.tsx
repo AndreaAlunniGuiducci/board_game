@@ -10,8 +10,10 @@ interface GameCardProps {
   maxPlayers?: string;
   recommendedAge?: string;
   onDetailClick?: () => void;
-  onBuyClick?: () => void;
+  onAddGame?: () => void;
+  onRemoveGame?: () => void;
   categories?: string[];
+  selected?: boolean;
 }
 
 const GameCard = ({
@@ -23,10 +25,12 @@ const GameCard = ({
   recommendedAge,
   categories,
   onDetailClick,
-  onBuyClick,
+  onAddGame,
+  onRemoveGame,
+  selected,
 }: GameCardProps) => {
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${selected ? styles.selected : ""}`}>
       <div className={styles.imageWrapper}>
         <img className={styles.image} src={imageUrl} alt={title} />
       </div>
@@ -62,11 +66,11 @@ const GameCard = ({
             Acquista
           </button> */}
           <Button
-            theme="green"
+            theme={selected ? "red" : "green"}
             className={styles.buyButton}
-            onClick={onBuyClick}
+            onClick={selected ? onRemoveGame : onAddGame}
           >
-            Aggiungi alla serata
+            {selected ? "Togli dalla serata" : "Aggiungi alla serata"}
           </Button>
         </div>
       </div>

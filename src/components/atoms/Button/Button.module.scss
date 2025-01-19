@@ -10,6 +10,12 @@
   &:hover {
     background-color: #0056b3;
   }
+  &:disabled {
+    background-color: #ccc !important;
+    color: #666 !important;
+    cursor: not-allowed;
+  }
+
   &.blue {
     background-color: #007bff;
     color: white;
@@ -25,6 +31,15 @@
 
     &:hover {
       background-color: #218838;
+    }
+  }
+
+  &.red {
+    background-color: #a72831;
+    color: white;
+
+    &:hover {
+      background-color: rgb(136, 33, 66);
     }
   }
 }
