@@ -1,19 +1,41 @@
-import { useNavigate } from "react-router-dom";
-import Button from "../../atoms/Button/Button";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.scss";
 
-const Header = () => {
-  const navigate = useNavigate();
+const Header: React.FC = () => {
+  const location = useLocation();
 
   return (
-    <div className={styles.header}>
-      <div>Logo</div>
-      <div className={styles.btnWrapper}>
-        <Button  onClick={()=> navigate('/')}>Home</Button>
-        <Button onClick={()=> navigate('/lista_giochi')}>Lista giochi</Button>
-        <Button onClick={()=> navigate('/prenotati')}>Lista serate</Button>
+    <header className={styles.header}>
+      <div className={styles.logo}>
+        <Link to="/">BoardGames</Link>
       </div>
-    </div>
+      <nav className={styles.nav}>
+        <ul className={styles.navList}>
+          <li
+            className={`${styles.navItem} ${
+              location.pathname === "/" ? styles.active : ""
+            }`}
+          >
+            <Link to="/">Home</Link>
+          </li>
+          <li
+            className={`${styles.navItem} ${
+              location.pathname === "/lista_giochi" ? styles.active : ""
+            }`}
+          >
+            <Link to="/lista_giochi">Giochi</Link>
+          </li>
+          <li
+            className={`${styles.navItem} ${
+              location.pathname === "/prenotati" ? styles.active : ""
+            }`}
+          >
+            <Link to="/prenotati">Prenotazioni</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 };
 
