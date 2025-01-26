@@ -1,10 +1,12 @@
 {
   "files": {
     "main.css": "/board_game/static/css/main.3c050277.css",
-    "main.js": "/board_game/static/js/main.2f844eff.js",
+    "main.js": "/board_game/static/js/main.74b2a691.js",
     "static/js/453.f8c5b444.chunk.js": "/board_game/static/js/453.f8c5b444.chunk.js",
     "static/media/lillero.png": "/board_game/static/media/lillero.5514b8893fcfd301f157.png",
     "static/media/azul.jpg": "/board_game/static/media/azul.f756881e16363ff97260.jpg",
+    "static/media/happy-salmon.webp": "/board_game/static/media/happy-salmon.556eb843cab5c0af9f17.webp",
+    "static/media/bellz.jpg": "/board_game/static/media/bellz.66a758196644f9364cac.jpg",
     "static/media/catan.png": "/board_game/static/media/catan.56d99964dbd128fca108.png",
     "static/media/tokyoTrain.png": "/board_game/static/media/tokyoTrain.98bec358d9419d43fad1.png",
     "static/media/pandemic.jpg": "/board_game/static/media/pandemic.e20f6528a3c45e4be4db.jpg",
@@ -12,23 +14,28 @@
     "static/media/joker.jpg": "/board_game/static/media/joker.75b7eda1b43af0d6b30a.jpg",
     "static/media/olympus.jpg": "/board_game/static/media/olympus.38d594bd8afb18a76a89.jpg",
     "static/media/dixit.jpg": "/board_game/static/media/dixit.27bb8f71d755d36b20db.jpg",
+    "static/media/balene-in-liberta.jpg": "/board_game/static/media/balene-in-liberta.db20ba35e2802295403e.jpg",
     "static/media/azul-il-giardino-della-regina.jpg": "/board_game/static/media/azul-il-giardino-della-regina.69edb2d6a7a2d9297134.jpg",
     "static/media/kalidosJunior.jpg": "/board_game/static/media/kalidosJunior.dc24f96418be1286fd1a.jpg",
     "static/media/ka-woom.jpg": "/board_game/static/media/ka-woom.c190757118c744d5db21.jpg",
     "static/media/13Indizi.jpg": "/board_game/static/media/13Indizi.53f009d3d88c716316b5.jpg",
     "static/media/sherlock.jpg": "/board_game/static/media/sherlock.4a873b35c9c38fd40408.jpg",
+    "static/media/saboteur.jpg": "/board_game/static/media/saboteur.1dfbdcc299214e672149.jpg",
+    "static/media/sei-fuori.jpg": "/board_game/static/media/sei-fuori.e68aa540f2d546c9be18.jpg",
     "static/media/callisto.jpg": "/board_game/static/media/callisto.76e46fc293d1bdb1e0c5.jpg",
     "static/media/cranium.jpg": "/board_game/static/media/cranium.6aebcff1882a549283a7.jpg",
     "static/media/geniale.jpg": "/board_game/static/media/geniale.2e75a2736d38077e6f86.jpg",
     "static/media/tubiMagici.jpg": "/board_game/static/media/tubiMagici.07cdc97df67d16e1a043.jpg",
+    "static/media/fantascatti.jpg": "/board_game/static/media/fantascatti.f00d3c02958b973125de.jpg",
     "static/media/level-9.jpg": "/board_game/static/media/level-9.cdb9a3d9c0f7b538a2e5.jpg",
+    "static/media/fantascatti-express.webp": "/board_game/static/media/fantascatti-express.02214e907a61d20017b0.webp",
     "index.html": "/board_game/index.html",
     "main.3c050277.css.map": "/board_game/static/css/main.3c050277.css.map",
-    "main.2f844eff.js.map": "/board_game/static/js/main.2f844eff.js.map",
+    "main.74b2a691.js.map": "/board_game/static/js/main.74b2a691.js.map",
     "453.f8c5b444.chunk.js.map": "/board_game/static/js/453.f8c5b444.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3c050277.css",
-    "static/js/main.2f844eff.js"
+    "static/js/main.74b2a691.js"
   ]
 }
