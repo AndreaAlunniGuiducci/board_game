@@ -19,6 +19,13 @@ import tubimagiciImage from "./image/tubiMagici.jpg";
 import topTenImage from "./image/topTen.jpg";
 import tokyoTrainImage from "./image/tokyoTrain.png";
 import indizi13Image from "./image/13Indizi.jpg";
+import baleneImage from "./image/balene-in-liberta.jpg";
+import happySalmonImage from "./image/happy-salmon.webp";
+import fantascattiImage from "./image/fantascatti.jpg";
+import fantascattiExpressImage from "./image/fantascatti-express.webp";
+import saboteurImage from "./image/saboteur.jpg";
+import bellzImage from "./image/bellz.jpg";
+import seiFuoriImage from "./image/sei-fuori.jpg";
 
 export const games: Game[] = [
   {
@@ -260,6 +267,90 @@ export const games: Game[] = [
     playTime: 30,
     description:
       "Londra, 1899. La città è sconvolta da crimini efferati le cui soluzioni sono avvolte nel mistero. La polizia di Scotland Yard brancola nel buio e convoca i detective migliori, per un aiuto risolutivo nelle indagini. Ogni investigatore dovrà usare tutto il proprio fiuto per scovare quali dei 13 indizi riguardano il caso a lui assegnato. Interrogando i testimoni e consultando gli informatori segreti, sarà possibile formulare le accuse e scoprire il colpevole, il luogo e l’arma.",
+  },
+  {
+    id: "021",
+    image: baleneImage,
+    name: "Balene in libertà",
+    categories: ["party game"],
+    minPlayer: 3,
+    maxPlayer: 12,
+    playerAge: 14,
+    playTime: 30,
+    description:
+      "Le Balene... in Libertà è un divertente gioco di carte in cui dovrete giocare con la lingua italiana costruendo una serie di frasi strampalate e divertenti utilizzando una serie di espressioni, spesso bizzarre. Ciascun giocatore avrà a disposizione una serie di carte con diversi spezzoni che dovrà concatenare con le carte giocate in precedenza per dare vita a una frase di senso compiuto.Carta dopo carta avrete l'occasione di liberarvi la mano, ma attenzione a non esagerare, se la sequenza non ha un senso logico dovrete recuperare la carta giocata e pescarne un'altra. Il vincitore è colui che per primo riuscirà a liberarsi di tutte le sue carte. Le Balene... in Libertà è un gioco da tavolo party edito da Imagommage e distribuito in Italia da Oliphante.",
+  },
+  {
+    id: "022",
+    image: happySalmonImage,
+    name: "Happy Salmon",
+    categories: ["party game", "kids", "cards"],
+    minPlayer: 3,
+    maxPlayer: 6,
+    playerAge: 6,
+    playTime: 2,
+    description:
+      "Dallo studio di Exploding Kittens: un gioco fisico, veloce e rumoroso. Happy Salmon è un gioco di carte velocissimo che fa muovere e ridere tutti in meno di due minuti.  Quindi fate un po’ di spazio, liberatevi delle sedie e, se il vostro battito supera i 120 bpm, probabilmente state giocando nel modo giusto.",
+  },
+  {
+    id: "023",
+    image: fantascattiImage,
+    name: "Fantascatti",
+    categories: ["euro", "kids", "cards"],
+    minPlayer: 2,
+    maxPlayer: 8,
+    playerAge: 8,
+    playTime: 20,
+    description:
+      "In Fantascatti imparerete a conoscere il simpatico fantasma Baldovino che infesta un lugubre castello. Se ne va in giro con una vecchia e polverosa macchina fotografica e fotografa tutto quello che fa apparire e scomparire …compreso se stesso! Purtroppo, la vecchia macchina fotografica sbaglia tutti i colori. Una bottiglia verde, ad esempio, a volte sembra bianca a volte blu; tanto che Baldovino non ricorda più cosa voleva far sparire. Aiutalo a ricordare gli oggetti giusti o falli scomparire per lui. Un buon colpo d’occhio e uno scatto felino ti assicureranno la vittoria! Fantascatti è un gioco da tavolo di destrezza e abilità adatto a tutta la famiglia edito da Giochi Uniti.",
+  },
+  {
+    id: "024",
+    image: fantascattiExpressImage,
+    name: "Fantascatti express",
+    categories: ["euro", "kids", "cards"],
+    minPlayer: 2,
+    maxPlayer: 6,
+    playerAge: 7,
+    playTime: 20,
+    description:
+      "Tommy è un giovane investigatore specializzato in casi mooolto particolari. Nonostante la sua giovane età non ha paura di avventurarsi in un vecchio castello abbandonato, armato solo della sua macchina fotografica, in cerca di temibili fantasmi da stanare. Ma non sarà facile, poiché i fantasmi cercheranno di confonderlo. Siete disposti a dargli una mano? Nel corso della partita, i giocatori tentano di “acchiappare” un numero di Fantasmi uguale a quello che compare sui 4 dadi.Per acchiappare i Fantasmi i giocatori possono prendere le carte che sono sparse sul tavolo da gioco, su cui ci sono raffigurati i vari tipi di fantasmi in varie combinazioni.",
+  },
+  {
+    id: "025",
+    image: saboteurImage,
+    name: "Saboteur",
+    categories: ["euro", "party game"],
+    minPlayer: 3,
+    maxPlayer: 10,
+    playerAge: 8,
+    playTime: 30,
+    description:
+      "Saboteur Nuova Edizione include anche l'espansione che comprende i nuovi ruoli quali il Boss, il Profittatore e il Geologo. Troverete inoltre nuove carte azione e nuove carte percorso, mentre la strada per raggiungere il tesoro sarà ancora più tortuosa! In Saboteur i giocatori sono nani minatori che hanno il compito di scavare con il loro piccone profonde gallerie alla ricerca del tesoro, avvalendosi solo di picconi, lampade e carrelli. Si vocifera, però, che tra i nani si nasconda un sabotatore che manderà tutto all'aria. Solo i nani capici di creare il giusto percorso per raggiungere i tesori verranno ricompensati con le pepite d'oro lasciando i sabotatori a mani vuote. Tuttavia, se saranno i cercatori d'oro a fallire, spetterà ai sabotatori ricevere la ricompensa. Lo scopo del gioco è quello di arrivare, partendo da una carta iniziale, alle carte di fine percorso: solo sotto una di esse si trova l'ambito tesoro. L’interazione tra i giocatori è altissima e la capacità di bluffing è un elemento fondamentale, capace di donare al gioco inaspettati colpi di scena. Brevità delle partite, regole semplici e l'alto numero di partecipanti possibili rendono questo gioco un party game eccezionale.",
+  },
+  {
+    id: "026",
+    image: bellzImage,
+    name: "Bellz",
+    categories: ["kids", "filler"],
+    minPlayer: 2,
+    maxPlayer: 4,
+    playerAge: 6,
+    playTime: 15,
+    description:
+      "Bellz! è un gioco di destrezza in cui ogni giocatore dovrà cercare di catturare tutti campanelli dello stesso colore, attirandoli con la bacchetta magnetica. Attenzione però, se per sbaglio attirate un campanello di un colore diverso, dovrete posare tutti i campanelli raccolti e cedere la bacchetta al giocatore successivo! Campanello dopo campanello chi riuscirà a completare per primo la propria collezione? Fate attenzione alla posizione dei campanelli sulla plancia di stoffa, cercate di intuire l'attrazione magnetica reciproca in base alle dimensione dei campanelli e provate a studiare una strategia vincente per portare a casa sia i campanelli piccoli che quelli grandi. Poche regole, tanti campanelli colorati per un divertimento assicurato per grandi e piccini.",
+  },
+  {
+    id: "027",
+    image: seiFuoriImage,
+    name: "6 fuori",
+    categories: ["cards", "party game", "euro"],
+    minPlayer: 3,
+    maxPlayer: 9,
+    playerAge: 7,
+    playTime: 20,
+    description:
+      "Questo gioco da tavolo coinvolgente, adatto a 3-9 giocatori, mette alla prova la tua capacità di pensare velocemente, evitare trabocchetti linguistici e scartare carte strategicamente per restare Dentro fino alla fine. Ma attenzione: una parola di troppo può metterti nei guai!",
   },
 ];
 
