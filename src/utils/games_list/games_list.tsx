@@ -26,6 +26,15 @@ import fantascattiExpressImage from "./image/fantascatti-express.webp";
 import saboteurImage from "./image/saboteur.jpg";
 import bellzImage from "./image/bellz.jpg";
 import seiFuoriImage from "./image/sei-fuori.jpg";
+import camaleonteImage from "./image/camaleonte.jpg";
+import unstableUnicornsImage from "./image/unstable-unicorns.jpg";
+import explodingKittenVM18 from "./image/exploding_kittens_vm18.jpg";
+import dontGetGotImage from "./image/dont-get-got.jpg";
+import kaBlabImage from "./image/ka-blab.jpg";
+import uccelliniImage from "./image/uccellini.jpg";
+import kryptosImage from "./image/kryptos.webp";
+import treDesideriImage from "./image/tre-desideri.webp";
+import oleGuacamole from "./image/ole-guacamole.jpg";
 
 export const games: Game[] = [
   {
@@ -351,6 +360,114 @@ export const games: Game[] = [
     playTime: 20,
     description:
       "Questo gioco da tavolo coinvolgente, adatto a 3-9 giocatori, mette alla prova la tua capacità di pensare velocemente, evitare trabocchetti linguistici e scartare carte strategicamente per restare Dentro fino alla fine. Ma attenzione: una parola di troppo può metterti nei guai!",
+  },
+  {
+    id: "028",
+    image: camaleonteImage,
+    name: "Camaleonte",
+    categories: ["party game", "filler"],
+    minPlayer: 3,
+    maxPlayer: 8,
+    playerAge: 14,
+    playTime: 15,
+    description:
+      "Il super-social, poliziesco, party game. Tutti sono a conoscenza del “segreto” tranne il Camaleonte.Ma chi è il Camaleonte?Per catturarlo, i giocatori devono descrivere il “segreto” utilizzando una sola parola. Troppo ovvia?Il Camaleonte si mimetizza. Troppo difficile?Qualcuno inizia a sospettare di voi. A questo punto date il via a frenetiche discussioni, bufale e dita puntate. Ma attenzione: scegliete il giocatore sbagliato e il Camaleonte fuggirà.",
+  },
+  {
+    id: "029",
+    image: unstableUnicornsImage,
+    name: "Unstable Unicorns",
+    categories: ["cards"],
+    minPlayer: 2,
+    maxPlayer: 8,
+    playerAge: 14,
+    playTime: 40,
+    description:
+      "Unstable Unicorns è un gioco di carte strategico, rapido e divertente, dalle illustrazioni pucciose e azioni infami! Crea un esercito di unicorni. Tradisci i tuoi amici. Sono gli unicorni i tuoi amici adesso. Un gioco di carte strategico sulle due cose che tutti amano: gli Unicorni e la Distruzione!Vince il primo giocatore che possiede 7 Unicorni nella propria Stalla!Si parte con 5 carte a testa e un unicorno baby nella propria stalla.Il gioco consiste poi nel pescare carte e giocare carte cercando di ravvivare la propria stalla con altri unicorni e, allo stesso tempo, impedendo agli altri di raggiungere l’obbiettivo.Come? Semplicemente lanciando bombe di glitter, inviando unicorni-narvali in azione, negando le azioni altrui con poderosi nitriti e altro ancora.",
+  },
+  {
+    id: "030",
+    image: explodingKittenVM18,
+    name: "Exploding kittens VM18",
+    categories: ["cards"],
+    minPlayer: 2,
+    maxPlayer: 5,
+    playerAge: 18,
+    playTime: 20,
+    description:
+      "Exploding Kittens: VM18 è la versione NSFW del divertentissimo gioco di carte con gattini puccettosi che esplodono a profusione. Queste carte, inizialmente ideate come espansione del gioco base e successivamente diventate un set giocabile in modo indipendente, contengono illustrazioni non del tutto politicamente corrette per essere incluse in un gioco adatto anche ai più piccoli. Questo pack di carte può essere giocato da solo, oppure combinandolo con il set standard.Anche in Exploding Kittens: VM18 ogni giocatore pesca carte fino a quando qualcuno non pesca una carta Exploding Kitten: a quel punto quel qualcuno esplode, è eliminato, è fuori dal gioco. A meno che quel giocatore non abbia una carta Disinnesgatto nella propria mano che possa disinnescare la carta Exploding Kitten. Queste carte possono essere i puntatori laser, i grattini sulla pancia o i sandwich di erba gatta. Tutte le rimanenti carte nel mazzo vengono usate per spostare, attenuare o evitare le carte Exploding Kitten.",
+  },
+  {
+    id: "031",
+    image: dontGetGotImage,
+    name: "Don't Get Got",
+    categories: ["party game"],
+    minPlayer: 2,
+    maxPlayer: 10,
+    playerAge: 16,
+    playTime: 30,
+    description:
+      "Ingannatevi a vicenda ma non fatevi scoprire! Questo non è il classico gioco da tavolo in cui sei piantato su una sedia: è un gioco di missioni segrete a cui puoi giocare mentre fai altro.Ogni giocatore riceve sei Missioni segrete, il primo a completarne tre decreta la fine del gioco e vince. Quindi, a prescindere che tu sia a casa, in vacanza, a una festa o che, addirittura, tu stia giocando ad un altro gioco, tieni d'occhio chi hai intorno... non potrai più fidarti di nessuno.",
+  },
+  {
+    id: "032",
+    image: kaBlabImage,
+    name: "Ka-Blab",
+    categories: ["party game", "euro"],
+    minPlayer: 2,
+    maxPlayer: 6,
+    playerAge: 10,
+    playTime: 30,
+    description:
+      "Ka-Blab Gioco di Società con Timer Bomba. Spara tutte le parole necessarie prima che scada il tempo; Ka-Blab! è un gioco veloce e frenetico in cui i giocatori devono dire parole appartenenti a una categoria prima che il timer esploda. In ogni round, i giocatori a turno tirano il dado per scoprire quante parole relative all'argomento indicato sulla carta devono dire; continuano a tirare il dado e a sparare parole fino a quando non possono passare il turno.",
+  },
+  {
+    id: "033",
+    image: uccelliniImage,
+    name: "Uccellini",
+    categories: ["filler", "kids", "euro"],
+    minPlayer: 2,
+    maxPlayer: 4,
+    playerAge: 8,
+    playTime: 15,
+    description:
+      "Uccellini è un gioco semplice e alla portata di tutti, in cui ciascun giocatore dovrà riuscire a completare i propri gruppi di uccellini del solito colore. Ricordatevi dove si nascondo gli uccellini che state cercando, ma fate molta attenzione perchè le tessere hanno una duplice faccia con colori diversi, per cui ricordarsi la posizione di questi coloratissimi animaletti non sarà affatto facile!Divertitevi con questo coloratissimo gioco adatto soprattutto ai giocatori più piccoli, per iniziare a muovere le prime mosse nel mondo dei giochi da tavolo.",
+  },
+  {
+    id: "034",
+    image: kryptosImage,
+    name: "Kryptos",
+    categories: ["filler", "investigatives"],
+    minPlayer: 3,
+    maxPlayer: 6,
+    playerAge: 8,
+    playTime: 15,
+    description:
+      "Kryptos racchiude una miniera di enigmi: chiavi per codici, indizi e messaggi segreti. Decifra il codice prima che lo faccia il tuo nemico! Pensa, pianifica e deduci, ma senza impiegare troppo tempo perché i tuoi avversari approfitteranno dei tuoi errori. Kryptos è un intuitivo gioco di deduzione in cui dovrete riuscire a capire quale sia la combinazione scelta dai vostri avversari, ovviamente prima che gli altri facciano lo stesso con voi, chi di voi riuscirà a scassinare per primo tutti gli avversari?",
+  },
+  {
+    id: "035",
+    image: treDesideriImage,
+    name: "3 Desideri",
+    categories: ["filler", "kids"],
+    minPlayer: 3,
+    maxPlayer: 5,
+    playerAge: 8,
+    playTime: 5,
+    description:
+      "3 Desideri è un gioco semplice ed estremamente rapido, ma non per questo poco divertente! Qualcuno deve aver strofinato una lampada magica, visto che di fronte ai vostri occhi si erge un imponente genio che vi chiede 3 esattamente desideri ciascuno. Solo quelli di uno di voi verranno realizzati, per cui il genio vi propone un giochino. Chi di voi riuscirà a proporgli 3 desideri di diversa tipologia riuscirà a vederli realizzati.ll'inizio del gioco ciascuno di voi possiede 3 carte desiderio, mentre al centro del tavolo ne sono presenti altre 2 coperte. Come unica azione a vostra disposizione potrete sbirciare o scambiare una carta con uno degli avversari o con quelle al centro del tavolo. Il primo ad ottenere 3 desideri diversi avrà vinto la partita!",
+  },
+  {
+    id: "036",
+    image: oleGuacamole,
+    name: "Olè guacamole",
+    categories: ["filler", "party game"],
+    minPlayer: 2,
+    maxPlayer: 8,
+    playerAge: 10,
+    playTime: 20,
+    description:
+      "Olé! Guacamole è un Party Game che si spiega in 10 secondi e che ti farà spremere le meningi!na carta con una lettera. (es. B) e dì una parola che non contenga quella lettera. (es. Tavolo)Tocca poi al giocatore successivo, che gira un’altra carta lettera. (es. F)Il giocatore deve dire ora una parola che NON contenga né la B, né la F e che sia collegata semanticamente alla parola precedente (Tavolo). Quindi, ad esempio “Sedia”!Si continua così finché qualcuno sbaglia o resta senza parole!Gli errori si pagano prendendo tutte le carte girate fino a quel momento.Alla fine della partita, il giocatore con meno carte è il vincitore!",
   },
 ];
 
