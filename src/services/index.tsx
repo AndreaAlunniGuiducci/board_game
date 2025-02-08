@@ -2,6 +2,7 @@ import {
   collection,
   doc,
   getDocs,
+  orderBy,
   query,
   setDoc,
   where,
@@ -85,12 +86,13 @@ export const getGames = () => async () => {
 
 export const getAddedGames = () => async () => {
   try {
-    const prod = getDocs(collection(db, `booked`)).then((data) => {
-      let addedGames = data.docs.map((i) => i.data());
-      return addedGames;
-    });
-    prod.then((data) => console.log(data));
-    return await prod;
+    const q = query(collection(db, "booked"), orderBy("date", "desc"));
+    const querySnapshot = await getDocs(q);
+    if (querySnapshot.empty) {
+      console.log("GAME Nessun documento trovato con questo filtro.");
+    }
+    const items = querySnapshot.docs.map((doc) => doc.data());
+    return items;
   } catch (err) {
     console.log(err);
   }

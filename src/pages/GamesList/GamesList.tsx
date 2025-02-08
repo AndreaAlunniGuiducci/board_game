@@ -42,12 +42,7 @@ const GamesList = ({ className }: any) => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
   const handlePurchase = (date: string) => {
-    const parsedDate = new Date(date).toLocaleDateString("it-IT", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    });
-    setDate(parsedDate.replaceAll("/", "-"));
+    setDate(date.replaceAll("/", "-"));
   };
   const getGamesList = () => {
     setLoading(true);
@@ -100,7 +95,12 @@ const GamesList = ({ className }: any) => {
         onClose={() => setModalOpen(false)}
         onSave={handlePurchase}
       />
-      {date && <div> Stai scegliendo i giochi per il {date}</div>}
+      {date && (
+        <div>
+          Stai scegliendo i giochi per il{" "}
+          {new Date(date).toLocaleDateString("it")}
+        </div>
+      )}
       <div className={styles.searchBar}>
         <Accordion
           items={[

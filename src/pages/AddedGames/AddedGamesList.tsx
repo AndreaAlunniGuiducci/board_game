@@ -1,38 +1,3 @@
-// import { useEffect, useState } from "react";
-// import styles from "./AddedGamesList.module.scss";
-// import { getAddedGames } from "../../services";
-// import { Game } from "../../types/game.types";
-
-// const AddedGamesList = ({ className }: any) => {
-//   const [dateList, setDateList] = useState<{ date: string; games: Game[] }[]>(
-//     []
-//   );
-
-//   const getGamesList = () => {
-//     const response = getAddedGames();
-//     response().then((data: any) => {
-//       setDateList(data);
-//       console.log("GAME LIST", data);
-//     });
-//   };
-
-//   useEffect(() => {
-//     getGamesList();
-//   }, [getAddedGames]);
-
-//   return (
-//     <div className={styles.addeGamesList + " " + className}>
-//       <h2>Lista delle partite</h2>
-//       <ul>
-//         {dateList.map((date, index) => (
-//           <li key={index}>{date?.date}</li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default AddedGamesList;
 import React, { useEffect, useState } from "react";
 import { getAddedGames } from "../../services";
 import styles from "./AddedGamesList.module.scss";
@@ -65,7 +30,7 @@ const AddedGamesList = ({ className }: any) => {
           {dateList.map((item, index) => {
             return item.games.length > 0 ? (
               <div key={index} className={styles.dateSection}>
-                <h2 className={styles.dateHeader}>{item.date}</h2>
+                <h2 className={styles.dateHeader}>{new Date(item.date).toLocaleDateString('it')}</h2>
                 <ul className={styles.gamesList}>
                   {item.games.map((game, index) => (
                     <li key={index} className={styles.gameItem}>
