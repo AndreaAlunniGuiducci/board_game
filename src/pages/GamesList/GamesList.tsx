@@ -170,15 +170,15 @@ const GamesList = ({ className }: any) => {
       ) : (
         <div className={styles.cardsWrapper}>
           {gamesList.length > 0
-            ? gamesList.map((g: any) => (
+            ? gamesList.map((g) => (
                 <GameCard
                   categories={g.categories}
                   imageUrl={g.image}
                   title={g.name}
-                  playTime={g.playTime}
-                  minPlayers={g.minPlayer}
-                  maxPlayers={g.maxPlayer}
-                  recommendedAge={g.playerAge}
+                  playTime={g.playTime.toString()}
+                  minPlayers={g.minPlayer.toString()}
+                  maxPlayers={g.maxPlayer.toString()}
+                  recommendedAge={g.playerAge.toString()}
                   onDetailClick={() => navigate("/gioco/" + g.id)}
                   onAddGame={() => addGameInList(g)}
                   onRemoveGame={() => removeGameInList(g)}

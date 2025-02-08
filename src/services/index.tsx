@@ -72,6 +72,20 @@ export const getFilteredGames = (filter: GameFilter) => async () => {
   }
 };
 
+export const getHighlightGames = () => async () => {
+  try {
+    const q = query(collection(db, "games"), where("show_in_home", "==", true));
+    const querySnapshot = await getDocs(q);
+    if (querySnapshot.empty) {
+      console.log("GAME Nessun documento trovato con questo filtro.");
+    }
+    const items = querySnapshot.docs.map((doc) => doc.data());
+    return items;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export const getGames = () => async () => {
   try {
     const prod = getDocs(collection(db, `games`)).then((data) => {

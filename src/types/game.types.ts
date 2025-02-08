@@ -20,4 +20,5 @@ export interface Game {
   playerAge: number;
   description: string;
   categories: Category[];
+  show_in_home?: boolean;
 }

@@ -9,3 +9,14 @@
     transform: translateY(10vh);
   }
 }
+@media (max-width: 768px) {
+  .App {
+    text-align: center;
+    .pageWithHeader {
+      overflow-y: auto;
+      padding: 20px;
+      height: 90vh;
+      transform: translateY(10vh);
+    }
+  }
+}
