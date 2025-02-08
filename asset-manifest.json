@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/board_game/static/css/main.94945d53.css",
-    "main.js": "/board_game/static/js/main.f1e72fc1.js",
+    "main.js": "/board_game/static/js/main.b822518e.js",
     "static/js/453.0079aacf.chunk.js": "/board_game/static/js/453.0079aacf.chunk.js",
+    "static/media/hero_image.png": "/board_game/static/media/hero_image.7fc75aff7f66f69bbae7.png",
     "static/media/lillero.png": "/board_game/static/media/lillero.5514b8893fcfd301f157.png",
     "static/media/azul.jpg": "/board_game/static/media/azul.f756881e16363ff97260.jpg",
     "static/media/happy-salmon.webp": "/board_game/static/media/happy-salmon.556eb843cab5c0af9f17.webp",
@@ -40,11 +41,11 @@
     "static/media/dont-get-got.jpg": "/board_game/static/media/dont-get-got.b408a5ab7f062a9c69bc.jpg",
     "index.html": "/board_game/index.html",
     "main.94945d53.css.map": "/board_game/static/css/main.94945d53.css.map",
-    "main.f1e72fc1.js.map": "/board_game/static/js/main.f1e72fc1.js.map",
+    "main.b822518e.js.map": "/board_game/static/js/main.b822518e.js.map",
     "453.0079aacf.chunk.js.map": "/board_game/static/js/453.0079aacf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.94945d53.css",
-    "static/js/main.f1e72fc1.js"
+    "static/js/main.b822518e.js"
   ]
 }
