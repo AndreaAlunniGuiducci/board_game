@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/board_game/static/css/main.3c050277.css",
-    "main.js": "/board_game/static/js/main.2be8c7d9.js",
+    "main.css": "/board_game/static/css/main.18b256ab.css",
+    "main.js": "/board_game/static/js/main.39d1d8e3.js",
     "static/js/453.0079aacf.chunk.js": "/board_game/static/js/453.0079aacf.chunk.js",
     "static/media/lillero.png": "/board_game/static/media/lillero.5514b8893fcfd301f157.png",
     "static/media/azul.jpg": "/board_game/static/media/azul.f756881e16363ff97260.jpg",
@@ -39,12 +39,12 @@
     "static/media/fantascatti-express.webp": "/board_game/static/media/fantascatti-express.02214e907a61d20017b0.webp",
     "static/media/dont-get-got.jpg": "/board_game/static/media/dont-get-got.b408a5ab7f062a9c69bc.jpg",
     "index.html": "/board_game/index.html",
-    "main.3c050277.css.map": "/board_game/static/css/main.3c050277.css.map",
-    "main.2be8c7d9.js.map": "/board_game/static/js/main.2be8c7d9.js.map",
+    "main.18b256ab.css.map": "/board_game/static/css/main.18b256ab.css.map",
+    "main.39d1d8e3.js.map": "/board_game/static/js/main.39d1d8e3.js.map",
     "453.0079aacf.chunk.js.map": "/board_game/static/js/453.0079aacf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c050277.css",
-    "static/js/main.2be8c7d9.js"
+    "static/css/main.18b256ab.css",
+    "static/js/main.39d1d8e3.js"
   ]
 }
