@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/board_game/static/css/main.94945d53.css",
-    "main.js": "/board_game/static/js/main.b822518e.js",
+    "main.js": "/board_game/static/js/main.92d9ca61.js",
     "static/js/453.0079aacf.chunk.js": "/board_game/static/js/453.0079aacf.chunk.js",
     "static/media/hero_image.png": "/board_game/static/media/hero_image.7fc75aff7f66f69bbae7.png",
     "static/media/lillero.png": "/board_game/static/media/lillero.5514b8893fcfd301f157.png",
     "static/media/azul.jpg": "/board_game/static/media/azul.f756881e16363ff97260.jpg",
+    "static/media/tacoGatto.png": "/board_game/static/media/tacoGatto.1750dd6b527a9d687036.png",
     "static/media/happy-salmon.webp": "/board_game/static/media/happy-salmon.556eb843cab5c0af9f17.webp",
     "static/media/kryptos.webp": "/board_game/static/media/kryptos.cdd767de5f6a395253bd.webp",
     "static/media/bellz.jpg": "/board_game/static/media/bellz.66a758196644f9364cac.jpg",
@@ -18,6 +19,7 @@
     "static/media/topTen.jpg": "/board_game/static/media/topTen.e906f200f3178177bdef.jpg",
     "static/media/joker.jpg": "/board_game/static/media/joker.75b7eda1b43af0d6b30a.jpg",
     "static/media/exploding_kittens_vm18.jpg": "/board_game/static/media/exploding_kittens_vm18.a50fc9a10c7a6bcc3f44.jpg",
+    "static/media/tacoParty.jpg": "/board_game/static/media/tacoParty.f0fd4be97ea369fa11b7.jpg",
     "static/media/olympus.jpg": "/board_game/static/media/olympus.38d594bd8afb18a76a89.jpg",
     "static/media/dixit.jpg": "/board_game/static/media/dixit.27bb8f71d755d36b20db.jpg",
     "static/media/balene-in-liberta.jpg": "/board_game/static/media/balene-in-liberta.db20ba35e2802295403e.jpg",
@@ -41,11 +43,11 @@
     "static/media/dont-get-got.jpg": "/board_game/static/media/dont-get-got.b408a5ab7f062a9c69bc.jpg",
     "index.html": "/board_game/index.html",
     "main.94945d53.css.map": "/board_game/static/css/main.94945d53.css.map",
-    "main.b822518e.js.map": "/board_game/static/js/main.b822518e.js.map",
+    "main.92d9ca61.js.map": "/board_game/static/js/main.92d9ca61.js.map",
     "453.0079aacf.chunk.js.map": "/board_game/static/js/453.0079aacf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.94945d53.css",
-    "static/js/main.b822518e.js"
+    "static/js/main.92d9ca61.js"
   ]
 }
