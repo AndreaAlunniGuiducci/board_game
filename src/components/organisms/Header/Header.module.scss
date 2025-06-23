@@ -8,7 +8,7 @@
   background-color: #69b00b;
   color: #ffffff;
   height: 10vh;
-
+  z-index: 1000;
   .logo {
     font-size: 24px;
     font-weight: bold;
@@ -46,6 +46,64 @@
           color: #007bff;
           font-weight: bold;
           border-bottom: 2px solid #007bff;
+        }
+      }
+    }
+    .mobileMenu {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .nav {
+      .navList {
+        display: none;
+      }
+      .mobileMenu {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #ffffff;
+      }
+    }
+    .mobileMenuContent {
+      position: fixed;
+      top: 74px;
+      left: 0;
+      width: 100vw;
+      height: calc(100vh - 74px);
+      background-color: #69b00bb2;
+      backdrop-filter: blur(8px);
+      .navList {
+        margin-top: 16px;
+        display: flex;
+        list-style: none;
+        padding: 0;
+        flex-direction: column;
+        gap: 16px;
+
+        .navItem {
+          margin-left: 20px;
+
+          a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #007bff;
+            }
+          }
+
+          &.active a {
+            color: #007bff;
+            font-weight: bold;
+            border-bottom: 2px solid #007bff;
+          }
         }
       }
     }

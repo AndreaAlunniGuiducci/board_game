@@ -35,6 +35,11 @@ import uccelliniImage from "./image/uccellini.jpg";
 import kryptosImage from "./image/kryptos.webp";
 import treDesideriImage from "./image/tre-desideri.webp";
 import oleGuacamole from "./image/ole-guacamole.jpg";
+import tacoGatto from "./image/tacoGatto.png";
+import tacoParty from "./image/tacoParty.jpg";
+import yogiImage from "./image/yogiImage.jpg";
+import truthOrDrinkImage from "./image/truthOrDrink.webp";
+import cinqueSecondi from "./image/cinqueSecondi.webp";
 
 export const games: Game[] = [
   {
@@ -504,6 +509,71 @@ export const games: Game[] = [
     playTime: 20,
     description:
       "Olé! Guacamole è un Party Game che si spiega in 10 secondi e che ti farà spremere le meningi!na carta con una lettera. (es. B) e dì una parola che non contenga quella lettera. (es. Tavolo)Tocca poi al giocatore successivo, che gira un’altra carta lettera. (es. F)Il giocatore deve dire ora una parola che NON contenga né la B, né la F e che sia collegata semanticamente alla parola precedente (Tavolo). Quindi, ad esempio “Sedia”!Si continua così finché qualcuno sbaglia o resta senza parole!Gli errori si pagano prendendo tutte le carte girate fino a quel momento.Alla fine della partita, il giocatore con meno carte è il vincitore!",
+  },
+  {
+    show_in_home: false,
+    id: "037",
+    image: tacoGatto,
+    name: "Taco gatto capra cacio pizza",
+    categories: ["filler", "party game"],
+    minPlayer: 2,
+    maxPlayer: 8,
+    playerAge: 8,
+    playTime: 10,
+    description:
+      "Taco Gatto Capra Cacio Pizza! Fissate bene a mente queste 5 parole. A turno si scopre una carta dal mazzo ma appena prima di farlo si dichiara ad alta voce una delle 5 parole. Appare una carta con l’immagine della parola dichiarata? Colpite con la mano velocemente la Pila centrale. L’ultimo raccoglie tutto! Siate vigili e osservatori per sbarazzarvi di tutte le vostre carte! Il minimo errore vi costerà carte di penalità: nessuna finta, nessuna esitazione è permessa!",
+  },
+  {
+    show_in_home: false,
+    id: "038",
+    image: tacoParty,
+    name: "Taco party torta pacco pizza",
+    categories: ["filler", "party game"],
+    minPlayer: 2,
+    maxPlayer: 8,
+    playerAge: 8,
+    playTime: 10,
+    description:
+      "Fissate bene a mente queste 5 parole. Appare una carta con l’immagine della parola dichiarata? Colpite con la mano velocemente la Pila centrale. L’ultimo raccoglie tutto! Siate vigili e osservatori per sbarazzarvi di tutte le vostre carte! Il minimo errore vi costerà carte di penalità: nessuna finta, nessuna esitazione è permessa in questo gioco di carte frenetico e divertente.",
+  },
+  {
+    show_in_home: false,
+    id: "039",
+    image: yogiImage,
+    name: "Yogi",
+    categories: ["party game", "american"],
+    minPlayer: 3,
+    maxPlayer: 12,
+    playerAge: 8,
+    playTime: 15,
+    description:
+      "In Yogi sarete chiamati ad assumere una serie di posizioni decisamente buffe e fuori di testa, in modo da ottenere il maggior numero di punti e risultare vincitori al termine della partita. Pescate una carta, se la carta è di colore rosso, dovrete tenere la carta appena pescata nel modo richiesto, mentre se è verde dovrete assumure la posizione richiesta. Ogni carta vi renderà sempre più difficile la vita, ma non temete, in Yogi più la posizione è assurda e più probabilmente starete accumulando punti!",
+  },
+  {
+    show_in_home: false,
+    id: "040",
+    image: truthOrDrinkImage,
+    name: "Truth or drink",
+    categories: ["party game", "american"],
+    minPlayer: 3,
+    maxPlayer: 8,
+    playerAge: 18,
+    playTime: 45,
+    description:
+      "Cosa vorresti dire ai tuoi datori di lavoro? In cosa ti piace sperperare i tuoi soldi? Cosa è successo al tuo primo appuntamento? Tratto dalla serie di grandissimo successo (11 milioni di iscritti, media di 1 milione di visualizzazioni a video) gestita dal gruppo CUT, truth or drink è un gioco di segreti da scoprire. Dovrai condividere le tue storie più imbarazzanti, dire quello che non avresti mai voluto ammettere, oppure bere…rischiando di finire per rivelare ancora di più!",
+  },
+  {
+    show_in_home: false,
+    id: "041",
+    image: cinqueSecondi,
+    name: "Cinque secondi, senza censure",
+    categories: ["party game", "american"],
+    minPlayer: 3,
+    maxPlayer: 99,
+    playerAge: 18,
+    playTime: 45,
+    description:
+      "Sembra facile nominare tre usi per la lingua, ma riesci a farlo senza rimanere impantanato o agitato? Tutti ti guardano, chiedendosi a cosa ti serve esattamente la lingua, e il tempo stringe: hai solo cinque secondi per scavare nell'angolo perverso della tua mente e sputarlo fuori!",
   },
 ];
 

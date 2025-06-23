@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Tag from "../../components/atoms/Tag/Tag";
+import heroImage from "../../assets/hero_image.png";
 import GameCard from "../../components/organisms/GameCardAlt3";
-import { getHighlightGames } from "../../services";
+import { addGames, getHighlightGames } from "../../services";
 import { Game } from "../../types/game.types";
-import heroImage from "../../utils/games_list/image/azul.jpg";
 import styles from "./Home.module.scss";
+// import Button from "../../components/atoms/Button/Button";
+// import games from "../../utils/games_list/games_list";
 
 const Home = ({ className }: any) => {
   const navigate = useNavigate();
