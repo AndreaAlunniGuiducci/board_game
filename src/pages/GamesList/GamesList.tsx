@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 // import GameCard from "../../components/organisms/GameCard/GameCard";
 import styles from "./GamesList.module.scss";
 import Accordion from "../../components/organisms/Accordion/Accordion";
@@ -14,8 +14,8 @@ import { Spinner } from "react-bootstrap";
 import GameCard from "../../components/organisms/GameCardAlt3";
 import games from "../../utils/games_list/games_list";
 import { Game } from "../../types/game.types";
-import ModalDate from "../../components/organisms/Modal/Modal";
 import Modal from "../../components/atoms/Modal/Modal";
+import ModalDate from "../../components/organisms/Modal/ModalDate";
 // import GameCard from "../../components/organisms/GameCardAlt2";
 // import GameCard from "../../components/organisms/GameCardAlt";
 
@@ -28,6 +28,8 @@ export interface GameFilter {
 
 const GamesList = ({ className }: any) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { state } = location;
 
   const [gameFilter, setGameFilter] = useState<GameFilter>({
     name: undefined,
@@ -44,6 +46,7 @@ const GamesList = ({ className }: any) => {
   const handlePurchase = (date: string) => {
     setDate(date.replaceAll("/", "-"));
   };
+
   const getGamesList = () => {
     setLoading(true);
     const response = getGames();
@@ -58,6 +61,7 @@ const GamesList = ({ className }: any) => {
       setAddedGames([...addedGames, game]);
       setModalOpen(false);
     } else {
+      setAddedGames([...addedGames, game]);
       setModalOpen(true);
     }
   };
@@ -88,107 +92,115 @@ const GamesList = ({ className }: any) => {
     }
   }, [addedGames]);
 
+  useEffect(() => {
+    if (state && state.game) {
+      addGameInList(state.game);
+    }
+  }, [state]);
+
   return (
-    <div className={styles.gamesList + " " + className}>
+    <>
       <ModalDate
         isOpen={isModalOpen}
         onClose={() => setModalOpen(false)}
         onSave={handlePurchase}
       />
-      {date && (
-        <div>
-          Stai scegliendo i giochi per il{" "}
-          {new Date(date).toLocaleDateString("it")}
+      <div className={styles.gamesList + " " + className}>
+        {date && (
+          <div>
+            Stai scegliendo i giochi per il{" "}
+            {new Date(date).toLocaleDateString("it")}
+          </div>
+        )}
+        <div className={styles.searchBar}>
+          <Accordion
+            items={[
+              {
+                body: (
+                  <div className={styles.inputWrapper}>
+                    <Input
+                      label="Nome"
+                      placeholder="Nome gioco"
+                      value={gameFilter.name}
+                      onChange={(e: any) =>
+                        setGameFilter({
+                          ...gameFilter,
+                          name: e.currentTarget.value,
+                        })
+                      }
+                    />
+                    <Input
+                      label="Età"
+                      placeholder="Età giocatore"
+                      value={gameFilter.age}
+                      onChange={(e: any) =>
+                        setGameFilter({
+                          ...gameFilter,
+                          age: e.currentTarget.value,
+                        })
+                      }
+                    />
+                    <Input
+                      label="Numero giocatori"
+                      placeholder="Numero giocatori"
+                      value={gameFilter.numberPlayer}
+                      onChange={(e: any) =>
+                        setGameFilter({
+                          ...gameFilter,
+                          numberPlayer: e.currentTarget.value,
+                        })
+                      }
+                    />
+                    <Input
+                      label="Minuti di gioco"
+                      placeholder="Minuti di gioco"
+                      value={gameFilter.gameTime}
+                      onChange={(e: any) =>
+                        setGameFilter({
+                          ...gameFilter,
+                          gameTime: e.currentTarget.value,
+                        })
+                      }
+                    />
+                  </div>
+                ),
+                eventKey: "0",
+                header: (
+                  <div>
+                    Filtri <Filter />
+                  </div>
+                ),
+              },
+            ]}
+          />
         </div>
-      )}
-      <div className={styles.searchBar}>
-        <Accordion
-          items={[
-            {
-              body: (
-                <div className={styles.inputWrapper}>
-                  <Input
-                    label="Nome"
-                    placeholder="Nome gioco"
-                    value={gameFilter.name}
-                    onChange={(e: any) =>
-                      setGameFilter({
-                        ...gameFilter,
-                        name: e.currentTarget.value,
-                      })
-                    }
+        {loading ? (
+          <Modal className={styles.loadingModal}>
+            <Spinner />
+          </Modal>
+        ) : (
+          <div className={styles.cardsWrapper}>
+            {gamesList.length > 0
+              ? gamesList.map((g) => (
+                  <GameCard
+                    categories={g.categories}
+                    imageUrl={g.image}
+                    title={g.name}
+                    playTime={g.playTime.toString()}
+                    minPlayers={g.minPlayer.toString()}
+                    maxPlayers={g.maxPlayer.toString()}
+                    recommendedAge={g.playerAge.toString()}
+                    onDetailClick={() => navigate("/gioco/" + g.id)}
+                    onAddGame={() => addGameInList(g)}
+                    onRemoveGame={() => removeGameInList(g)}
+                    selected={addedGames.some((game) => game.id === g.id)}
                   />
-                  <Input
-                    label="Età"
-                    placeholder="Età giocatore"
-                    value={gameFilter.age}
-                    onChange={(e: any) =>
-                      setGameFilter({
-                        ...gameFilter,
-                        age: e.currentTarget.value,
-                      })
-                    }
-                  />
-                  <Input
-                    label="Numero giocatori"
-                    placeholder="Numero giocatori"
-                    value={gameFilter.numberPlayer}
-                    onChange={(e: any) =>
-                      setGameFilter({
-                        ...gameFilter,
-                        numberPlayer: e.currentTarget.value,
-                      })
-                    }
-                  />
-                  <Input
-                    label="Minuti di gioco"
-                    placeholder="Minuti di gioco"
-                    value={gameFilter.gameTime}
-                    onChange={(e: any) =>
-                      setGameFilter({
-                        ...gameFilter,
-                        gameTime: e.currentTarget.value,
-                      })
-                    }
-                  />
-                </div>
-              ),
-              eventKey: "0",
-              header: (
-                <div>
-                  Filtri <Filter />
-                </div>
-              ),
-            },
-          ]}
-        />
+                ))
+              : "Empty STATE"}
+          </div>
+        )}
       </div>
-      {loading ? (
-        <Modal className={styles.loadingModal}>
-          <Spinner />
-        </Modal>
-      ) : (
-        <div className={styles.cardsWrapper}>
-          {gamesList.length > 0
-            ? gamesList.map((g) => (
-                <GameCard
-                  categories={g.categories}
-                  imageUrl={g.image}
-                  title={g.name}
-                  playTime={g.playTime.toString()}
-                  minPlayers={g.minPlayer.toString()}
-                  maxPlayers={g.maxPlayer.toString()}
-                  recommendedAge={g.playerAge.toString()}
-                  onDetailClick={() => navigate("/gioco/" + g.id)}
-                  onAddGame={() => addGameInList(g)}
-                  onRemoveGame={() => removeGameInList(g)}
-                  selected={addedGames.some((game) => game.id === g.id)}
-                />
-              ))
-            : "Empty STATE"}
-        </div>
-      )}
-    </div>
+    </>
   );
 };
 

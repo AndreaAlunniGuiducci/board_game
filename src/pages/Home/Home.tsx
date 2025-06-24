@@ -5,6 +5,7 @@ import GameCard from "../../components/organisms/GameCardAlt3";
 import { addGames, getHighlightGames } from "../../services";
 import { Game } from "../../types/game.types";
 import styles from "./Home.module.scss";
+import { routes } from "../../utils/routes";
 // import Button from "../../components/atoms/Button/Button";
 // import games from "../../utils/games_list/games_list";
 
@@ -58,7 +59,9 @@ const Home = ({ className }: any) => {
               maxPlayers={g.maxPlayer.toString()}
               recommendedAge={g.playerAge.toString()}
               onDetailClick={() => navigate("/gioco/" + g.id)}
-              // onAddGame={() => addGameInList(g)}
+              onAddGame={() =>
+                navigate(routes.gameList, { state: { game: g } })
+              }
               // onRemoveGame={() => removeGameInList(g)}
               // selected={addedGames.some((game) => game.id === g.id)}
             />

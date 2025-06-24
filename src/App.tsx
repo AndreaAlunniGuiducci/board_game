@@ -12,6 +12,7 @@ import GamesList from "./pages/GamesList/GamesList";
 import GameDescription from "./pages/GameDescription/GameDescription";
 import GameDetailPage from "./pages/GameDescriptionAlt/GameDetailPage";
 import AddedGamesList from "./pages/AddedGames/AddedGamesList";
+import { routes } from "./utils/routes";
 
 // const router = createBrowserRouter(
 //   [
@@ -47,17 +48,17 @@ const router = createHashRouter([
       </div>
     ),
     children: [
-      { path: "/", element: <Home className="pageWithHeader" /> },
+      { path: routes.home, element: <Home className="pageWithHeader" /> },
       {
-        path: "/lista_giochi",
+        path: routes.gameList,
         element: <GamesList className="pageWithHeader" />,
       },
       {
-        path: "/gioco/:gameId",
+        path: routes.gameDetail(":gameId"),
         element: <GameDetailPage className="pageWithHeader" />,
       },
       {
-        path: "/prenotati",
+        path: routes.bookedGames,
         element: <AddedGamesList className="pageWithHeader" />,
       },
     ],

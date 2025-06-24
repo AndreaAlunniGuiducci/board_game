@@ -7,7 +7,7 @@ interface ModalProps {
   onSave: (date: string) => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onSave }) => {
+const ModalDate: React.FC<ModalProps> = ({ isOpen, onClose, onSave }) => {
   const [selectedDate, setSelectedDate] = useState<string>("");
 
   const handleSave = () => {
@@ -45,4 +45,4 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onSave }) => {
   );
 };
 
-export default Modal;
+export default ModalDate;

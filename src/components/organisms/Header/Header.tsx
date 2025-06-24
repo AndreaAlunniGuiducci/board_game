@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.scss";
 import { List, X, XCircle, XLg } from "react-bootstrap-icons";
+import { routes } from "../../../utils/routes";
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -30,17 +31,17 @@ const Header: React.FC = () => {
           </li>
           <li
             className={`${styles.navItem} ${
-              location.pathname === "/lista_giochi" ? styles.active : ""
+              location.pathname === routes.gameList ? styles.active : ""
             }`}
           >
-            <Link to="/lista_giochi">Giochi</Link>
+            <Link to={routes.gameList}>Giochi</Link>
           </li>
           <li
             className={`${styles.navItem} ${
-              location.pathname === "/prenotati" ? styles.active : ""
+              location.pathname === routes.bookedGames ? styles.active : ""
             }`}
           >
-            <Link to="/prenotati">Prenotazioni</Link>
+            <Link to={routes.bookedGames}>Prenotazioni</Link>
           </li>
         </ul>
         <div className={styles.mobileMenu} onClick={openMenu}>
@@ -53,26 +54,26 @@ const Header: React.FC = () => {
             <li
               onClick={closeMenu}
               className={`${styles.navItem} ${
-                location.pathname === "/" ? styles.active : ""
+                location.pathname === routes.home ? styles.active : ""
               }`}
             >
-              <Link to="/">Home</Link>
+              <Link to={routes.home}>Home</Link>
             </li>
             <li
               onClick={closeMenu}
               className={`${styles.navItem} ${
-                location.pathname === "/lista_giochi" ? styles.active : ""
+                location.pathname === routes.gameList ? styles.active : ""
               }`}
             >
-              <Link to="/lista_giochi">Giochi</Link>
+              <Link to={routes.gameList}>Giochi</Link>
             </li>
             <li
               onClick={closeMenu}
               className={`${styles.navItem} ${
-                location.pathname === "/prenotati" ? styles.active : ""
+                location.pathname === routes.bookedGames ? styles.active : ""
               }`}
             >
-              <Link to="/prenotati">Prenotazioni</Link>
+              <Link to={routes.bookedGames}>Prenotazioni</Link>
             </li>
           </ul>
         </div>
