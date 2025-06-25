@@ -1,6 +1,18 @@
 .gamesList {
   display: flex;
   flex-direction: column;
+  .dateInfo {
+    padding: 8px;
+    background-color: #fff;
+    position: sticky;
+    top: -20px;
+    width: 100%;
+    text-align: center;
+    z-index: 9;
+    button {
+      margin-left: 16px;
+    }
+  }
   .inputWrapper {
     display: flex;
     justify-content: center;

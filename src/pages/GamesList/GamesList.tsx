@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 // import GameCard from "../../components/organisms/GameCard/GameCard";
 import styles from "./GamesList.module.scss";
 import Accordion from "../../components/organisms/Accordion/Accordion";
@@ -16,6 +16,7 @@ import games from "../../utils/games_list/games_list";
 import { Game } from "../../types/game.types";
 import Modal from "../../components/atoms/Modal/Modal";
 import ModalDate from "../../components/organisms/Modal/ModalDate";
+import Button from "../../components/atoms/Button/Button";
 // import GameCard from "../../components/organisms/GameCardAlt2";
 // import GameCard from "../../components/organisms/GameCardAlt";
 
@@ -44,7 +45,11 @@ const GamesList = ({ className }: any) => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
   const handlePurchase = (date: string) => {
-    setDate(date.replaceAll("/", "-"));
+    const dateString = new Date(date.replaceAll("/", "-")).toLocaleDateString(
+      "it"
+    );
+    setDate(dateString);
+    localStorage.setItem("gameDate", dateString);
   };
 
   const getGamesList = () => {
@@ -57,7 +62,9 @@ const GamesList = ({ className }: any) => {
   };
 
   const addGameInList = (game: Game) => {
-    if (date) {
+    const localDate = localStorage.getItem("gameDate");
+    if (localDate) {
+      setDate(localDate);
       setAddedGames([...addedGames, game]);
       setModalOpen(false);
     } else {
@@ -86,11 +93,11 @@ const GamesList = ({ className }: any) => {
     filterTheGame();
   }, [gameFilter]);
 
-  useEffect(() => {
-    if (addedGames.length >= 0 && date) {
-      addGamesToTheEvening(addedGames, date)();
-    }
-  }, [addedGames]);
+  // useEffect(() => {
+  //   if (addedGames.length >= 0 && date) {
+  //     addGamesToTheEvening(addedGames, date)();
+  //   }
+  // }, [addedGames]);
 
   useEffect(() => {
     if (state && state.game) {
@@ -107,9 +114,11 @@ const GamesList = ({ className }: any) => {
       />
       <div className={styles.gamesList + " " + className}>
         {date && (
-          <div>
-            Stai scegliendo i giochi per il{" "}
-            {new Date(date).toLocaleDateString("it")}
+          <div className={styles.dateInfo}>
+            <span>Stai scegliendo i giochi per il {date}</span>
+            <Link to="/riepilogo" state={{ games: addedGames }}>
+              <Button>Vai al riepilogo</Button>
+            </Link>
           </div>
         )}
         <div className={styles.searchBar}>

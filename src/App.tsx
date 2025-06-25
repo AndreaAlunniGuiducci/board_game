@@ -42,10 +42,10 @@ const router = createHashRouter([
   {
     path: "/",
     element: (
-      <div>
+      <>
         <Header />
         <Outlet />
-      </div>
+      </>
     ),
     children: [
       { path: routes.home, element: <Home className="pageWithHeader" /> },
