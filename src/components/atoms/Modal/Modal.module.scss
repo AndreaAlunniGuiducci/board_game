@@ -1,9 +1,11 @@
 .modal {
+  padding-top: 100px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #69b00b;
-  opacity: 60%;
+  background-color: #68b00b70;
+  // opacity: 60%;
+  z-index: 1000;
 }

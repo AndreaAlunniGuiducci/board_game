@@ -1,7 +1,7 @@
 import { ButtonProps as BootsrtapButtonProps } from "react-bootstrap";
 import styles from "./Button.module.scss";
 interface ButtonProps extends BootsrtapButtonProps {
-  theme?: "blue" | "green" | "red";
+  theme?: "blue" | "green" | "red" | "transparent";
 }
 
 const Button = ({

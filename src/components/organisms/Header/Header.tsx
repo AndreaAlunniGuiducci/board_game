@@ -1,11 +1,26 @@
 import React, { useEffect, useState } from "react";
+import { List, PersonCircle, X, XCircle } from "react-bootstrap-icons";
 import { Link, useLocation } from "react-router-dom";
-import styles from "./Header.module.scss";
-import { List, X, XCircle, XLg } from "react-bootstrap-icons";
+import { loginUser, registerUser } from "../../../services/auth";
 import { routes } from "../../../utils/routes";
+import Button from "../../atoms/Button/Button";
+import Input from "../../atoms/Input/Input";
+import Modal from "../../atoms/Modal/Modal";
+import styles from "./Header.module.scss";
+import { Spinner, Tab, Tabs } from "react-bootstrap";
 
 const Header: React.FC = () => {
   const location = useLocation();
+  const [userIsLogged, setUserIsLogged] = useState(false);
+  const [userName, setUserName] = useState<string>("");
+
+  const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [registerErrorMessage, setRegisterErrorMessage] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const openMenu = () => {
@@ -15,70 +30,202 @@ const Header: React.FC = () => {
     setMenuIsOpen(false);
   };
 
+  const registerNewUser = () => {
+    if (password === confirmPassword) {
+      setLoading(true);
+      registerUser(email, password).then(() => {
+        setLoading(false);
+        setLoginModalIsOpen(false);
+        alert("Registrazione avvenuta con successo!");
+      });
+    } else {
+      setRegisterErrorMessage("Le password non coincidono");
+    }
+  };
+  
+  const login = () => {
+    setLoading(true);
+    loginUser(email, password).then(() => {
+      setLoading(false);
+      setLoginModalIsOpen(false);
+    });
+  };
+
+  useEffect(() => {
+    const userString = localStorage.getItem("user");
+    const userObj = userString ? JSON.parse(userString) : null;
+    console.log("🚀 ~ Header ~ userObj:", userObj)
+    if (userObj) {
+      setUserName(userObj.displayName);
+    }
+    setUserIsLogged(!!userString);
+  }, [loading, loginModalIsOpen]);
+
   return (
-    <header className={styles.header}>
-      <div className={styles.logo}>
-        <Link to="/">BoardGames</Link>
-      </div>
-      <nav className={styles.nav}>
-        <ul className={styles.navList}>
-          <li
-            className={`${styles.navItem} ${
-              location.pathname === "/" ? styles.active : ""
-            }`}
-          >
-            <Link to="/">Home</Link>
-          </li>
-          <li
-            className={`${styles.navItem} ${
-              location.pathname === routes.gameList ? styles.active : ""
-            }`}
-          >
-            <Link to={routes.gameList}>Giochi</Link>
-          </li>
-          <li
-            className={`${styles.navItem} ${
-              location.pathname === routes.bookedGames ? styles.active : ""
-            }`}
-          >
-            <Link to={routes.bookedGames}>Prenotazioni</Link>
-          </li>
-        </ul>
-        <div className={styles.mobileMenu} onClick={openMenu}>
-          {menuIsOpen ? <XCircle /> : <List />}
+    <>
+      {loginModalIsOpen && (
+        <Modal className={styles.loginModal}>
+          <div className={styles.loginModalContent}>
+            <div className={styles.loginModalHeader}>
+              <Button
+                className={styles.closeButton}
+                theme="transparent"
+                onClick={() => setLoginModalIsOpen(false)}
+              >
+                <X />
+              </Button>
+            </div>
+            <Tabs>
+              <Tab title="Registrati" eventKey="register">
+                <div className={styles.modalContent}>
+                  <form
+                    onSubmit={() => {
+                      registerNewUser();
+                    }}
+                  >
+                    <Input
+                      type="email"
+                      label="Email"
+                      placeholder="Email"
+                      value={email}
+                      onChange={(e: any) => setEmail(e.target.value)}
+                    />
+                    <Input
+                      type="password"
+                      label="Password"
+                      placeholder="Password"
+                      value={password}
+                      onChange={(e: any) => setPassword(e.target.value)}
+                    />
+                    <Input
+                      type="password"
+                      label="Ripeti Password"
+                      placeholder="Ripeti Password"
+                      value={confirmPassword}
+                      formText={registerErrorMessage}
+                      onChange={(e: any) => setConfirmPassword(e.target.value)}
+                    />
+                    <Button type="submit" className={styles.submitButton}>
+                      Invia
+                    </Button>
+                  </form>
+                </div>
+              </Tab>
+              <Tab title="Login" eventKey="login">
+                <div className={styles.modalContent}>
+                  <form
+                    onSubmit={() => {
+                      login();
+                    }}
+                  >
+                    <Input
+                      type="email"
+                      label="Email"
+                      placeholder="Email"
+                      value={email}
+                      onChange={(e: any) => setEmail(e.target.value)}
+                    />
+                    <Input
+                      type="password"
+                      label="Password"
+                      placeholder="Password"
+                      value={password}
+                      onChange={(e: any) => setPassword(e.target.value)}
+                    />
+                    <Button type="submit" className={styles.submitButton}>
+                      Invia
+                    </Button>
+                  </form>
+                </div>
+              </Tab>
+            </Tabs>
+          </div>
+        </Modal>
+      )}
+      {loading && (
+        <Modal>
+          <Spinner />
+        </Modal>
+      )}
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <Link to="/">BoardGames</Link>
         </div>
-      </nav>
-      {menuIsOpen && (
-        <div className={styles.mobileMenuContent}>
+        <nav className={styles.nav}>
           <ul className={styles.navList}>
             <li
-              onClick={closeMenu}
               className={`${styles.navItem} ${
-                location.pathname === routes.home ? styles.active : ""
+                location.pathname === "/" ? styles.active : ""
               }`}
             >
-              <Link to={routes.home}>Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li
-              onClick={closeMenu}
               className={`${styles.navItem} ${
                 location.pathname === routes.gameList ? styles.active : ""
               }`}
             >
               <Link to={routes.gameList}>Giochi</Link>
             </li>
-            <li
-              onClick={closeMenu}
-              className={`${styles.navItem} ${
-                location.pathname === routes.bookedGames ? styles.active : ""
-              }`}
-            >
-              <Link to={routes.bookedGames}>Prenotazioni</Link>
+            <li className={`${styles.navItem} `}>
+              {userIsLogged ? (
+                <span>{userName}</span>
+              ) : (
+                <Button
+                  theme="transparent"
+                  onClick={() => {
+                    setLoginModalIsOpen(true);
+                  }}
+                  className={styles.loginButton}
+                >
+                  <PersonCircle />
+                </Button>
+              )}
             </li>
+            {/* <li
+            className={`${styles.navItem} ${
+              location.pathname === routes.bookedGames ? styles.active : ""
+            }`}
+          >
+            <Link to={routes.bookedGames}>Prenotazioni</Link>
+          </li> */}
           </ul>
-        </div>
-      )}
-    </header>
+          <div className={styles.mobileMenu} onClick={openMenu}>
+            {menuIsOpen ? <XCircle /> : <List />}
+          </div>
+        </nav>
+        {menuIsOpen && (
+          <div className={styles.mobileMenuContent}>
+            <ul className={styles.navList}>
+              <li
+                onClick={closeMenu}
+                className={`${styles.navItem} ${
+                  location.pathname === routes.home ? styles.active : ""
+                }`}
+              >
+                <Link to={routes.home}>Home</Link>
+              </li>
+              <li
+                onClick={closeMenu}
+                className={`${styles.navItem} ${
+                  location.pathname === routes.gameList ? styles.active : ""
+                }`}
+              >
+                <Link to={routes.gameList}>Giochi</Link>
+              </li>
+              <li
+                onClick={closeMenu}
+                className={`${styles.navItem} ${
+                  location.pathname === routes.bookedGames ? styles.active : ""
+                }`}
+              >
+                <Link to={routes.bookedGames}>Prenotazioni</Link>
+              </li>
+            </ul>
+          </div>
+        )}
+      </header>
+    </>
   );
 };
 

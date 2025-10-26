@@ -42,4 +42,14 @@
       background-color: rgb(136, 33, 66);
     }
   }
+
+  &.transparent {
+    background-color: transparent;
+    color: white;
+
+    &:hover {
+      background-color: transparent;
+      opacity: 0.75;
+    }
+  }
 }

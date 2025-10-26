@@ -40,6 +40,7 @@ import tacoParty from "./image/tacoParty.jpg";
 import yogiImage from "./image/yogiImage.jpg";
 import truthOrDrinkImage from "./image/truthOrDrink.webp";
 import cinqueSecondi from "./image/cinqueSecondi.webp";
+import bangImage from "./image/bang.jpg";
 
 export const games: Game[] = [
   {
@@ -279,15 +280,15 @@ export const games: Game[] = [
   {
     show_in_home: false,
     id: "019",
-    image: azulQueenGardenImage,
-    name: "13 Indizzi",
-    categories: ["euro", "management"],
-    minPlayer: 2,
-    maxPlayer: 6,
-    playerAge: 99,
+    image: bangImage,
+    name: "Bang!",
+    categories: ["euro"],
+    minPlayer: 4,
+    maxPlayer: 7,
+    playerAge: 8,
     playTime: 30,
     description:
-      "Londra, 1899. La città è sconvolta da crimini efferati le cui soluzioni sono avvolte nel mistero. La polizia di Scotland Yard brancola nel buio e convoca i detective migliori, per un aiuto risolutivo nelle indagini. Ogni investigatore dovrà usare tutto il proprio fiuto per scovare quali dei 13 indizi riguardano il caso a lui assegnato. Interrogando i testimoni e consultando gli informatori segreti, sarà possibile formulare le accuse e scoprire il colpevole, il luogo e l’arma.",
+      "I Fuorilegge danno la caccia allo Sceriffo. Lo Sceriffo dà la caccia ai Fuorilegge. Il Rinnegato trama nell’ombra, pronto a schierarsi da una parte o dall’altra. Le pallottole volano. Chi fra i pistoleri sarà un aiutante dello Sceriffo, pronto a sacrificarsi per lui? E chi invece uno spietato Fuorilegge, che non aspetta altro che farlo fuori? Il gioco western più venduto del mondo in una versione ancora più ricca e facile da imparare!",
   },
   {
     show_in_home: false,
