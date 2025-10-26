@@ -1,6 +1,7 @@
 import {
   Auth,
   createUserWithEmailAndPassword,
+  reload,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
@@ -71,4 +72,19 @@ export const loginUser = async (user_email: string, user_password: string) => {
       console.error("Errore login", errorCode);
     });
   return login;
+};
+
+export const changeName = async (newName: string) => {
+  const currentUser = auth.currentUser;
+  if (currentUser) {
+    await updateProfile(auth.currentUser!, {
+      displayName: newName,
+    }).then(() => {
+      alert("Nome aggiornato con successo");
+    });
+    await reload(currentUser).then(() => {
+      console.log("🚀 ~ changeName ~ currentUser:", currentUser);
+      window.localStorage.setItem("user", JSON.stringify(currentUser));
+    });
+  }
 };

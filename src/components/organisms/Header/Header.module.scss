@@ -93,6 +93,43 @@
           font-weight: bold;
           border-bottom: 2px solid #007bff;
         }
+
+        .userDropdown {
+          [class*="dropdown-toggle"] {
+            background: none;
+            border: none;
+            color: #ffffff;
+            box-shadow: none;
+            padding: 0;
+            font-size: 16px;
+            font-weight: 500;
+
+            &:hover,
+            &:focus,
+            &:active {
+              background: none;
+              color: #007bff;
+              box-shadow: none;
+            }
+            &::after {
+              display: none;
+            }
+          }
+          .profileMenu {
+            background-color: #69b00b;
+
+            .profileItem {
+              padding-left: 0;
+              padding-right: 0;
+              button{
+                width: 100%;
+              }
+              &:hover{
+                background-color: #007bff60;
+              }
+            }
+          }
+        }
         .loginButton {
           svg {
             width: 20px;

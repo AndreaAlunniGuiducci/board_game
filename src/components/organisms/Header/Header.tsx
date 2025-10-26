@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { List, PersonCircle, X, XCircle } from "react-bootstrap-icons";
 import { Link, useLocation } from "react-router-dom";
-import { loginUser, registerUser } from "../../../services/auth";
+import { changeName, loginUser, registerUser } from "../../../services/auth";
 import { routes } from "../../../utils/routes";
 import Button from "../../atoms/Button/Button";
 import Input from "../../atoms/Input/Input";
 import Modal from "../../atoms/Modal/Modal";
 import styles from "./Header.module.scss";
-import { Spinner, Tab, Tabs } from "react-bootstrap";
+import { Dropdown, Spinner, Tab, Tabs } from "react-bootstrap";
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -20,6 +20,9 @@ const Header: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [registerErrorMessage, setRegisterErrorMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+
+  const [userMenuIsOpen, setUserMenuIsOpen] = useState(false);
+  const [newUserName, setNewUserName] = useState<string>("");
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
@@ -42,7 +45,7 @@ const Header: React.FC = () => {
       setRegisterErrorMessage("Le password non coincidono");
     }
   };
-  
+
   const login = () => {
     setLoading(true);
     loginUser(email, password).then(() => {
@@ -54,7 +57,6 @@ const Header: React.FC = () => {
   useEffect(() => {
     const userString = localStorage.getItem("user");
     const userObj = userString ? JSON.parse(userString) : null;
-    console.log("🚀 ~ Header ~ userObj:", userObj)
     if (userObj) {
       setUserName(userObj.displayName);
     }
@@ -142,8 +144,45 @@ const Header: React.FC = () => {
           </div>
         </Modal>
       )}
+      {userMenuIsOpen && (
+        <Modal className={styles.loginModal}>
+          <div className={styles.loginModalContent}>
+            <div className={styles.loginModalHeader}>
+              <Button
+                className={styles.closeButton}
+                theme="transparent"
+                onClick={() => setUserMenuIsOpen(false)}
+              >
+                <X />
+              </Button>
+            </div>
+            <div className={styles.modalContent}>
+              <form
+                onSubmit={() => {
+                  setLoading(true);
+                  changeName(newUserName).then(() => {
+                    setUserMenuIsOpen(false);
+                    setLoading(false);
+                  });
+                }}
+              >
+                <Input
+                  type="text"
+                  label="Nome"
+                  placeholder="Nome"
+                  value={newUserName}
+                  onChange={(e: any) => setNewUserName(e.target.value)}
+                />
+                <Button type="submit" className={styles.submitButton}>
+                  Invia
+                </Button>
+              </form>
+            </div>
+          </div>
+        </Modal>
+      )}
       {loading && (
-        <Modal>
+        <Modal className={styles.loadingModal}>
           <Spinner />
         </Modal>
       )}
@@ -169,7 +208,32 @@ const Header: React.FC = () => {
             </li>
             <li className={`${styles.navItem} `}>
               {userIsLogged ? (
-                <span>{userName}</span>
+                <Dropdown className={styles.userDropdown}>
+                  <Dropdown.Toggle>{userName}</Dropdown.Toggle>
+                  <Dropdown.Menu className={styles.profileMenu}>
+                    <Dropdown.Item className={styles.profileItem}>
+                      <Button
+                        theme="transparent"
+                        onClick={() => {
+                          setUserMenuIsOpen(true);
+                        }}
+                      >
+                        Profilo
+                      </Button>
+                    </Dropdown.Item>
+                    <Dropdown.Item className={styles.profileItem}>
+                      <Button
+                        theme="transparent"
+                        onClick={() => {
+                          setUserIsLogged(false);
+                          localStorage.removeItem("user");
+                        }}
+                      >
+                        Logout
+                      </Button>
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               ) : (
                 <Button
                   theme="transparent"
