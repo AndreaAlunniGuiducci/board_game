@@ -43,6 +43,7 @@ export const registerUser = async (
         }).then(() => {});
       }
       window.localStorage.setItem("user", JSON.stringify(user));
+      return true;
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -50,6 +51,7 @@ export const registerUser = async (
         window.alert("Email già in uso");
       }
       console.error("Error creating user", errorCode);
+      return false;
     });
   return register;
 };

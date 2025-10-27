@@ -36,10 +36,12 @@ const Header: React.FC = () => {
   const registerNewUser = () => {
     if (password === confirmPassword) {
       setLoading(true);
-      registerUser(email, password).then(() => {
+      registerUser(email, password).then((success) => {
         setLoading(false);
-        setLoginModalIsOpen(false);
-        alert("Registrazione avvenuta con successo!");
+        if (success) {
+          setLoginModalIsOpen(false);
+          alert("Registrazione avvenuta con successo!");
+        }
       });
     } else {
       setRegisterErrorMessage("Le password non coincidono");
