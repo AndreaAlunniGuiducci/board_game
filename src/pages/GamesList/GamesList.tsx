@@ -17,6 +17,7 @@ import { Game } from "../../types/game.types";
 import Modal from "../../components/atoms/Modal/Modal";
 import ModalDate from "../../components/organisms/Modal/ModalDate";
 import Button from "../../components/atoms/Button/Button";
+import { useSelector } from "react-redux";
 // import GameCard from "../../components/organisms/GameCardAlt2";
 // import GameCard from "../../components/organisms/GameCardAlt";
 
@@ -30,8 +31,11 @@ export interface GameFilter {
 const GamesList = ({ className }: any) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const userUid = useSelector((state: any) => state.user.uid);
+  console.log("🚀 ~ GamesList ~ userUid:", userUid)
   const { state } = location;
 
+  const [userIsLogged, setUserIsLogged] = useState<boolean>(false);
   const [gameFilter, setGameFilter] = useState<GameFilter>({
     name: undefined,
     age: undefined,
@@ -64,7 +68,7 @@ const GamesList = ({ className }: any) => {
   const addGameInList = (game: Game) => {
     //TODO: migliorare logica aggiunta giochi con data
     const localDate = localStorage.getItem("gameDate");
-    if (localDate) {
+    if (userIsLogged && localDate) {
       setDate(localDate);
       setAddedGames([...addedGames, game]);
       setModalOpen(false);
@@ -106,22 +110,31 @@ const GamesList = ({ className }: any) => {
     }
   }, [state]);
 
+  useEffect(() => {
+    const userToken = localStorage.getItem("user");
+    if (userToken) {
+      setUserIsLogged(true);
+    } else {
+      setUserIsLogged(false);
+    }
+  }, [localStorage]);
+
   return (
     <>
-      <ModalDate
+      {/* <ModalDate
         isOpen={isModalOpen}
         onClose={() => setModalOpen(false)}
         onSave={handlePurchase}
-      />
+      /> */}
       <div className={styles.gamesList + " " + className}>
-        {date && (
+        {/* {date && (
           <div className={styles.dateInfo}>
             <span>Stai scegliendo i giochi per il {date}</span>
             <Link to="/riepilogo" state={{ games: addedGames }}>
               <Button>Vai al riepilogo</Button>
             </Link>
           </div>
-        )}
+        )} */}
         <div className={styles.searchBar}>
           <Accordion
             items={[

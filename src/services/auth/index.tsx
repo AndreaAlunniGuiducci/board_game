@@ -65,6 +65,7 @@ export const loginUser = async (user_email: string, user_password: string) => {
     .then((userCredential) => {
       const user = userCredential.user;
       window.localStorage.setItem("user", JSON.stringify(user));
+      return user
     })
     .catch((error) => {
       const errorCode = error.code;

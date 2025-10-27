@@ -8,8 +8,11 @@ import Input from "../../atoms/Input/Input";
 import Modal from "../../atoms/Modal/Modal";
 import styles from "./Header.module.scss";
 import { Dropdown, Spinner, Tab, Tabs } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../../store/slices/userSlice";
 
 const Header: React.FC = () => {
+  const dispatch = useDispatch();
   const location = useLocation();
   const [userIsLogged, setUserIsLogged] = useState(false);
   const [userName, setUserName] = useState<string>("");
@@ -39,6 +42,9 @@ const Header: React.FC = () => {
       registerUser(email, password).then((success) => {
         setLoading(false);
         if (success) {
+          const localUser = localStorage.getItem("user");
+          const userObj = localUser ? JSON.parse(localUser) : null;
+          console.log("🚀 ~ registerNewUser ~ userObj:", userObj)
           setLoginModalIsOpen(false);
           alert("Registrazione avvenuta con successo!");
         }
@@ -47,10 +53,16 @@ const Header: React.FC = () => {
       setRegisterErrorMessage("Le password non coincidono");
     }
   };
-
   const login = () => {
     setLoading(true);
-    loginUser(email, password).then(() => {
+    loginUser(email, password).then((user) => {
+      const {displayName, uid} = user as {displayName: string; uid: string};
+      if (!displayName && !uid) {
+        setLoading(false);
+        alert("Errore nel login, riprova");
+        return;
+      }
+      dispatch(setUser({displayName, uid}));
       setLoading(false);
       setLoginModalIsOpen(false);
     });

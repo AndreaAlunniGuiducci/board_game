@@ -1,8 +1,12 @@
 import React from "react";
 import styles from "./GameCard.module.scss";
 import Button from "../../atoms/Button/Button";
+import { Heart, HeartFill } from "react-bootstrap-icons";
+import getCategory from "../../../utils/getCategory";
+import { Category } from "../../../types/game.types";
 
 interface GameCardProps {
+  is_favorite?: boolean;
   imageUrl?: string;
   title?: string;
   playTime?: string;
@@ -14,10 +18,12 @@ interface GameCardProps {
   onRemoveGame?: () => void;
   categories?: string[];
   selected?: boolean;
+  handleFavorite?: () => void;
 }
 
 const GameCard = ({
   imageUrl,
+  is_favorite,
   title,
   playTime,
   minPlayers,
@@ -27,11 +33,15 @@ const GameCard = ({
   onDetailClick,
   onAddGame,
   onRemoveGame,
+  handleFavorite,
   selected,
 }: GameCardProps) => {
   return (
     <div className={`${styles.card} ${selected ? styles.selected : ""}`}>
       <div className={styles.imageWrapper}>
+        <div className={styles.favoriteIcon} onClick={handleFavorite}>
+          {is_favorite ? <HeartFill size={20} /> : <Heart size={20} />}
+        </div>
         <img className={styles.image} src={imageUrl} alt={title} />
       </div>
       <div className={styles.info}>
@@ -53,7 +63,7 @@ const GameCard = ({
         <div className={styles.categories}>
           {categories?.map((category, index) => (
             <span key={index} className={styles.category}>
-              {category}
+              {getCategory(category as Category)}
             </span>
           ))}
         </div>
