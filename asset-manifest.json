@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/board_game/static/css/main.94945d53.css",
-    "main.js": "/board_game/static/js/main.d4a59265.js",
+    "main.css": "/board_game/static/css/main.e0510fbf.css",
+    "main.js": "/board_game/static/js/main.3d7fbff0.js",
     "static/js/453.0079aacf.chunk.js": "/board_game/static/js/453.0079aacf.chunk.js",
     "static/media/hero_image.png": "/board_game/static/media/hero_image.7fc75aff7f66f69bbae7.png",
     "static/media/lillero.png": "/board_game/static/media/lillero.5514b8893fcfd301f157.png",
@@ -17,6 +17,7 @@
     "static/media/ka-blab.jpg": "/board_game/static/media/ka-blab.556c268d7a31ad8b649e.jpg",
     "static/media/pandemic.jpg": "/board_game/static/media/pandemic.e20f6528a3c45e4be4db.jpg",
     "static/media/topTen.jpg": "/board_game/static/media/topTen.e906f200f3178177bdef.jpg",
+    "static/media/bang.jpg": "/board_game/static/media/bang.d2ee19440c6a05fb6c66.jpg",
     "static/media/joker.jpg": "/board_game/static/media/joker.75b7eda1b43af0d6b30a.jpg",
     "static/media/exploding_kittens_vm18.jpg": "/board_game/static/media/exploding_kittens_vm18.a50fc9a10c7a6bcc3f44.jpg",
     "static/media/tacoParty.jpg": "/board_game/static/media/tacoParty.f0fd4be97ea369fa11b7.jpg",
@@ -45,12 +46,12 @@
     "static/media/dont-get-got.jpg": "/board_game/static/media/dont-get-got.b408a5ab7f062a9c69bc.jpg",
     "static/media/truthOrDrink.webp": "/board_game/static/media/truthOrDrink.f25514937112072a698d.webp",
     "index.html": "/board_game/index.html",
-    "main.94945d53.css.map": "/board_game/static/css/main.94945d53.css.map",
-    "main.d4a59265.js.map": "/board_game/static/js/main.d4a59265.js.map",
+    "main.e0510fbf.css.map": "/board_game/static/css/main.e0510fbf.css.map",
+    "main.3d7fbff0.js.map": "/board_game/static/js/main.3d7fbff0.js.map",
     "453.0079aacf.chunk.js.map": "/board_game/static/js/453.0079aacf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.94945d53.css",
-    "static/js/main.d4a59265.js"
+    "static/css/main.e0510fbf.css",
+    "static/js/main.3d7fbff0.js"
   ]
 }
