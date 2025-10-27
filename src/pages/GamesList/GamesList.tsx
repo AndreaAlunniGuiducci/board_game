@@ -62,6 +62,7 @@ const GamesList = ({ className }: any) => {
   };
 
   const addGameInList = (game: Game) => {
+    //TODO: migliorare logica aggiunta giochi con data
     const localDate = localStorage.getItem("gameDate");
     if (localDate) {
       setDate(localDate);

@@ -279,14 +279,56 @@ const Header: React.FC = () => {
               >
                 <Link to={routes.gameList}>Giochi</Link>
               </li>
-              <li
+              <li className={`${styles.navItem} `}>
+                {userIsLogged ? (
+                  <Dropdown className={styles.userDropdown}>
+                    <Dropdown.Toggle>{userName}</Dropdown.Toggle>
+                    <Dropdown.Menu className={styles.profileMenu}>
+                      <Dropdown.Item className={styles.profileItem}>
+                        <Button
+                          theme="transparent"
+                          onClick={() => {
+                            setUserMenuIsOpen(true);
+                            setMenuIsOpen(false);
+                          }}
+                        >
+                          Profilo
+                        </Button>
+                      </Dropdown.Item>
+                      <Dropdown.Item className={styles.profileItem}>
+                        <Button
+                          theme="transparent"
+                          onClick={() => {
+                            setUserIsLogged(false);
+                            localStorage.removeItem("user");
+                          }}
+                        >
+                          Logout
+                        </Button>
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                ) : (
+                  <Button
+                    theme="transparent"
+                    onClick={() => {
+                      setMenuIsOpen(false);
+                      setLoginModalIsOpen(true);
+                    }}
+                    className={styles.loginButton}
+                  >
+                    <PersonCircle />
+                  </Button>
+                )}
+              </li>
+              {/* <li
                 onClick={closeMenu}
                 className={`${styles.navItem} ${
                   location.pathname === routes.bookedGames ? styles.active : ""
                 }`}
               >
                 <Link to={routes.bookedGames}>Prenotazioni</Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         )}
