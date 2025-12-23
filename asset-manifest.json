@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/board_game/static/css/main.e0510fbf.css",
-    "main.js": "/board_game/static/js/main.3d7fbff0.js",
+    "main.css": "/board_game/static/css/main.26faa658.css",
+    "main.js": "/board_game/static/js/main.3c6ab056.js",
     "static/js/453.0079aacf.chunk.js": "/board_game/static/js/453.0079aacf.chunk.js",
     "static/media/hero_image.png": "/board_game/static/media/hero_image.7fc75aff7f66f69bbae7.png",
     "static/media/lillero.png": "/board_game/static/media/lillero.5514b8893fcfd301f157.png",
@@ -46,12 +46,12 @@
     "static/media/dont-get-got.jpg": "/board_game/static/media/dont-get-got.b408a5ab7f062a9c69bc.jpg",
     "static/media/truthOrDrink.webp": "/board_game/static/media/truthOrDrink.f25514937112072a698d.webp",
     "index.html": "/board_game/index.html",
-    "main.e0510fbf.css.map": "/board_game/static/css/main.e0510fbf.css.map",
-    "main.3d7fbff0.js.map": "/board_game/static/js/main.3d7fbff0.js.map",
+    "main.26faa658.css.map": "/board_game/static/css/main.26faa658.css.map",
+    "main.3c6ab056.js.map": "/board_game/static/js/main.3c6ab056.js.map",
     "453.0079aacf.chunk.js.map": "/board_game/static/js/453.0079aacf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0510fbf.css",
-    "static/js/main.3d7fbff0.js"
+    "static/css/main.26faa658.css",
+    "static/js/main.3c6ab056.js"
   ]
 }
