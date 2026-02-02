@@ -31,7 +31,7 @@ export interface GameFilter {
 const GamesList = ({ className }: any) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const userUid = useSelector((state: any) => state.user.uid);
+  const userUid = useSelector((state: any) => state.user?.uid);
   console.log("🚀 ~ GamesList ~ userUid:", userUid)
   const { state } = location;
 

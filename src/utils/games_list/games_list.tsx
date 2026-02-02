@@ -41,6 +41,21 @@ import yogiImage from "./image/yogiImage.jpg";
 import truthOrDrinkImage from "./image/truthOrDrink.webp";
 import cinqueSecondi from "./image/cinqueSecondi.webp";
 import bangImage from "./image/bang.jpg";
+import ethnosImage from "./image/ethnos.jpg";
+import gummiLandImage from "./image/gummiland.jpg";
+import lewisAndClarkImage from "./image/lewis-clark.jpg";
+import portaliDiMoltharImage from "./image/il-portale-di-molthar.jpg";
+import myShelfieImage from "./image/my-shelfie.jpg";
+import huesAndCuesImage from "./image/hues-and-cues.jpg";
+import dulcisInFundoImage from "./image/dulcis-in-fundo.jpg";
+import IconImage from "./image/dulcis-in-fundo.jpg";
+import crackListImage from "./image/crack-list.jpg";
+import aiaGaiaImage from "./image/aia-gaia.jpg";
+import beccatoImage from "./image/beccato.jpg";
+import sushiGoPartyImage from "./image/sushi-go-party.jpg";
+import centuryMOImage from "./image/century-meraviglie-orientali.jpg";
+import centuryNMImage from "./image/century-nuovo-mondo.jpg";
+import centuryVdSImage from "./image/century-la-via-delle-spezie.jpg";
 
 export const games: Game[] = [
   {
@@ -575,6 +590,201 @@ export const games: Game[] = [
     playTime: 45,
     description:
       "Sembra facile nominare tre usi per la lingua, ma riesci a farlo senza rimanere impantanato o agitato? Tutti ti guardano, chiedendosi a cosa ti serve esattamente la lingua, e il tempo stringe: hai solo cinque secondi per scavare nell'angolo perverso della tua mente e sputarlo fuori!",
+  },
+  {
+    show_in_home: false,
+    id: "042",
+    image: ethnosImage,
+    name: "Ethnos",
+    categories: ["deck building", "euro", "strategy"],
+    minPlayer: 2,
+    maxPlayer: 6,
+    playerAge: 14,
+    playTime: 50,
+    description:
+      "In Ethnos dovrete chiedere aiuto alle 12 tribù che abitano questo reame fantasy per ottenere il controllo dei vari territori e risultare l'alleanza più potente al termine della partita! Invocate l'aiuto di giganti, tritoni, halfling, minotauri e tutta una serie di altre razze fantasy per imporvi sui vostri avversari grazie ad un fine posizionamento strategico ed all'utilizzo sagace del potere di ogni razza. Ogni partita prevederà l'utilizzo di sole 6 razze, in modo da garantire un'alta rigiocabilità e permettervi una serie altissima di possibili combinazioni. Utilizzate al meglio la vostra mano di carte e posizionate in modo astuto i membri dei vari clan per ottenere più gloria possibile nel corso di 3 ere di gioco. Al termine dell'ultima era, il giocatore con il maggior quantitativo di punti gloria verrà proclamato vincitore. Ethnos è un gioco di tattica e strategia edito da Asmodee Italia.",
+  },
+  {
+    show_in_home: false,
+    id: "043",
+    image: gummiLandImage,
+    name: "Gummy land",
+    categories: ["kids"],
+    minPlayer: 2,
+    maxPlayer: 4,
+    playerAge: 6,
+    playTime: 20,
+    description:
+      "Gummiland è un gioco da tavolo ambientato in un universo colorato e vibrante, popolato dai deliziosi Gummiz, caramelle animate che vivono in un mondo ricco di frutta. I giocatori vengono trasportati in questa terra incantata con l'obiettivo di attirare e collezionare i Gummiz, sfruttando la loro passione per la frutta. Il gioco si presenta come un'esperienza visiva e tattile unica, dove ogni tessera e componente è progettato con cura per immergere i partecipanti in un'avventura coinvolgente.",
+  },
+  {
+    show_in_home: false,
+    id: "044",
+    image: lewisAndClarkImage,
+    name: "Lewis and Clark",
+    categories: ["management", "euro", "strategy"],
+    minPlayer: 1,
+    maxPlayer: 5,
+    playerAge: 14,
+    playTime: 120,
+    description:
+      "Lewis & Clark ti immerge in un viaggio epico attraverso il continente nordamericano, accompagnando gli intrepidi esploratori Meriwether Lewis e William Clark. In questa seconda edizione migliorata, il gioco offre un'esperienza unica di gestione delle risorse e piazzamento lavoratori, con un elegante motore di deck building. L'obiettivo è raggiungere la costa del Pacifico, vivendo un'avventura originale e stimolante.",
+  },
+  {
+    show_in_home: false,
+    id: "045",
+    image: portaliDiMoltharImage,
+    name: "I portali di Molthar",
+    categories: ["cards"],
+    minPlayer: 2,
+    maxPlayer: 5,
+    playerAge: 8,
+    playTime: 40,
+    description:
+      "Il Portale di Molthar è un gioco da tavolo di carte che conduce i giocatori nel pieno di un mondo popolato da creature magiche e folkloristiche. In questo mondo, dovranno collezionare perle arcane e scambiarle con carte potenti o usarle per attivare dei personaggi: solo chi raccoglierà per primo 12 simboli di potere, però, potrà dirsi l'unico salvatore di Molthar (e l'unico vincitore della partita).",
+  },
+  {
+    show_in_home: false,
+    id: "046",
+    image: myShelfieImage,
+    name: "My shelfie",
+    categories: ["euro", "management", "strategy"],
+    minPlayer: 2,
+    maxPlayer: 4,
+    playerAge: 8,
+    playTime: 30,
+    description:
+      "My Shelfie ti invita a immergerti in un'esperienza di gioco unica, dove la tua missione è quella di riempire la tua nuova libreria con una varietà di oggetti affascinanti. Colleziona libri, piante, giochi da tavolo, ritratti e premi, senza dimenticare di riservare un angolino speciale per i tuoi amati gatti. Ogni scelta che fai contribuisce a creare una libreria che rispecchia la tua personalità e il tuo stile. Sei pronto a dimostrare di avere la libreria meglio organizzata?",
+  },
+  {
+    show_in_home: false,
+    id: "047",
+    image: huesAndCuesImage,
+    name: "Hues and cues",
+    categories: ["party game", "filler"],
+    minPlayer: 3,
+    maxPlayer: 10,
+    playerAge: 8,
+    playTime: 30,
+    description:
+      "Hues & Cues è un party game brillante che mette alla prova la capacità di associare parole e sfumature. Con 480 colori sul tabellone, ogni indizio diventa una sfida: una sola parola per guidare gli altri verso la tonalità esatta, una seconda per affinare il tiro. Quanto riuscirete ad avvicinarvi? Parole, intuizioni e deduzioni: I giocatori devono interpretare gli indizi e scegliere il quadratino di colore che ritengono corrispondente. Chi dà l’indizio ottiene punti in base alla precisione dei guess, mentre chi indovina viene premiato per la propria abilità nel cogliere la sfumatura giusta. “Fenicottero”… “Frullato fragole”… sapreste trovare la nuance perfetta?",
+  },
+  {
+    show_in_home: false,
+    id: "048",
+    image: dulcisInFundoImage,
+    name: "Dulcis in fundo",
+    categories: ["kids", "filler"],
+    minPlayer: 2,
+    maxPlayer: 5,
+    playerAge: 5,
+    playTime: 10,
+    description:
+      "Benvenuti alla Grande Abbuffata dei Mostri di Dulcis in Fundo! Tu sei uno di questi mostri coccolosi con un'attrazione incredibile per i dessert. Alla fine di ogni pasto potrai mangiarne solo uno; però quello giusto. Raggiungilo prima degli altri per pappartelo e vincere! Utilizzate il vostro colpo d'occhio per capire quale sentirero vi porterà al giusto dessert da gustare, ma fatelo rapidamente, poiché anche gli altri mostri vorranno ottenere il dolcetto prima degli altri! Lanciate il dado e via ad acchiappare il dessert giusto al termine del percorso indicato dal suo risultato.",
+  },
+  {
+    show_in_home: false,
+    id: "049",
+    image: IconImage,
+    name: "Icon",
+    categories: ["kids", "filler"],
+    minPlayer: 3,
+    maxPlayer: 10,
+    playerAge: 10,
+    playTime: 15,
+    description:
+      "La sfida è riuscire a descrivere uno stato d’animo tramite un'immagine. Il giocatore di turno (il giudice) pone una domanda e gli altri utilizzano una delle proprie carte per rappresentare l’emozione vissuta. Colui che avrà dato la migliore interpretazione, a scelta del giudice, guadagnerà un punto. Chi arriva per primo a tre punti vince la partita!",
+  },
+  {
+    show_in_home: false,
+    id: "050",
+    image: crackListImage,
+    name: "Crack list",
+    categories: ["party game", "filler", "cards"],
+    minPlayer: 2,
+    maxPlayer: 8,
+    playerAge: 14,
+    playTime: 30,
+    description:
+      "Il gioco di società di chi adora stare insieme: “Nome, cose, città”, in una nuova, spassosa versione! Con i partner, gli amici, i nonni o chi vuoi tu... In 2, 4, 6 o 8 (o molte di più se giochi a squadre), dopo il lavoro, con i colleghi, all’aperitivo o al digestivo, coi coinquilini o con i cugini, metti sul tavolo le carte di CRACK LIST... e il gioco è fatto! Crack List è un gioco di carte in 3 turni. Il primo che si libera di tutte le carte, ha vinto! Nulla di più semplice, o quasi...",
+  },
+  {
+    show_in_home: false,
+    id: "051",
+    image: aiaGaiaImage,
+    name: "Aia gaia",
+    categories: ["kids", "filler"],
+    minPlayer: 3,
+    maxPlayer: 8,
+    playerAge: 6,
+    playTime: 15,
+    description:
+      "Aia Gaia è un gioco pensato per tutta la famiglia. La sfida consiste nell'avere il cortile più bello e divertente! In Aia Gaia gli animali della fattoria e non solo scorrazzano a destra e a manca. Richiamate i vostri animali nel cortile con i loro caratteristici versi per attivarne gli effetti e così danneggiare i vostri vicini. Ogni turno potrete aggiungere nuovi animali alla vostra mano, oppure utilizzare uno di essi per giocarlo nella vostra aia. Ma fate attenzione, solamente chiamandoli nel modo giusto gli animali vi daranno retta! Vi ricordate il verso di tutti gli animali?",
+  },
+  {
+    show_in_home: false,
+    id: "052",
+    image: beccatoImage,
+    name: "Beccato",
+    categories: ["party game", "filler"],
+    minPlayer: 4,
+    maxPlayer: 9,
+    playerAge: 8,
+    playTime: 15,
+    description:
+      "Beccato è un gioco che ti immerge in un'esperienza unica di strategia e comunicazione non verbale. In questo avvincente party game, il tuo obiettivo è raccogliere più uova dei tuoi avversari. Ma attenzione, la chiave del successo è nei gesti furtivi e negli sguardi eloquenti. Dovrai far capire al tuo compagno di squadra le carte che hai in mano attraverso un segnale segreto, senza farti scoprire dagli avversari. Beccato è un gioco che mette alla prova la tua capacità di comunicare in modo sottile e quasi telepatico.",
+  },
+  {
+    show_in_home: false,
+    id: "053",
+    image: sushiGoPartyImage,
+    name: "Sushi go party",
+    categories: ["party game", "cards", "euro"],
+    minPlayer: 2,
+    maxPlayer: 8,
+    playerAge: 8,
+    playTime: 20,
+    description:
+      "Sushi Go Party! ti invita a partecipare a una vivace festa sushi in una versione deluxe che promette di conquistare tutti i palati. Immergiti in un mondo di sapori giapponesi mentre componi il tuo menù personale scegliendo tra una vasta gamma di opzioni deliziose. L'obiettivo è ottenere il punteggio più alto in tre round, selezionando le combinazioni di carte più vantaggiose prima che sfuggano via! Questo gioco non è solo una sfida strategica, ma anche un viaggio culinario che ti farà apprezzare l'arte del sushi.",
+  },
+  {
+    show_in_home: false,
+    id: "054",
+    image: centuryMOImage,
+    name: "Century: mervaiglie orientali",
+    categories: ["euro", "management", "strategy"],
+    minPlayer: 2,
+    maxPlayer: 4,
+    playerAge: 8,
+    playTime: 40,
+    description:
+      "Meraviglie Orientali è il secondo capitolo della serie di Century che può essere giocato indipendentemente, oppure combinato con il primo capitolo La Via delle Spezie per aver accesso ad una variante di gioco ancora più ricca. Il commercio delle spezie ha portato le nazioni più ricche ad esplorare nuove terre in cerca di queste preziose merci. Le esplorazioni via mare hanno permesso la scoperta delle prosperose Isole delle Spezie, un luogo in cui le spezie più preziose al mondo possono essere raccolte. Questa scoperta ha dato il via ad una nuova ondata di esplorazioni che ha portato a nuove competizioni commerciali ed in alcuni casi belliche. Nella veste di un mercante e di un bucaniere, dovrete cercare di portare profitto a voi e alla vostra nazione, cercando gloria e merci preziose nel lontano oriente. Prendete il mare in questo nuovo emozionante capitolo che vi permetterà di partire verso l'arcipelago Indonesiano alla ricerca di incredibili ricchezze accompagnati da una serie di nuove accattivanti meccaniche da includere nella saga di Century.",
+  },
+  {
+    show_in_home: false,
+    id: "055",
+    image: centuryNMImage,
+    name: "Century: nuovo mondo",
+    categories: ["euro", "management", "strategy"],
+    minPlayer: 2,
+    maxPlayer: 4,
+    playerAge: 8,
+    playTime: 40,
+    description:
+      "Il Nuovo Mondo è il terzo ed ultimo capitolo della serie di Century che può essere giocato indipendentemente, oppure combinato con il primo capitolo La Via delle Spezie e/o il secondo capitolo Meraviglie Orientali per aver accesso ad una variante di gioco ancora più ricca. Il vostro viaggio di almeno 300 anni nella storia del commercio e dell'esplorazione che avete intrapreso grazie a Century sta per concludersi, stavolta entro i confini del Nuovo Mondo! Nella veste di un mercante dedito a costruire il proprio impero commerciale all’inizio del 16° secolo sfruttando le risorse delle Americhe dovrete sfruttare al meglio le risorse di questo nuovo continente. Lo scontro con la natura selvaggia è tuttavia inevitabile, avrete bisogno di cacciare e coltivare, raccogliere risorse, esplorare i territori e commerciare con i nativi per poter sopravvivere e ottenere profitto dalla vostra impresa commerciale.",
+  },
+  {
+    show_in_home: false,
+    id: "056",
+    image: centuryVdSImage,
+    name: "Century: la via delle spezie",
+    categories: ["euro", "management", "strategy"],
+    minPlayer: 2,
+    maxPlayer: 4,
+    playerAge: 8,
+    playTime: 40,
+    description:
+      "La Via delle Spezie è il primo di una trilogia di giochi raggruppati sotto il titolo Century, ciascuno indipendente dall'altro. In questo primo capitolo vestirete i panni di un capo carovaniere che si muove lungo la via della seta per commerciare spezie ed ottenere gloria e ricchezza dal loro commercio. Durante il proprio turno ciascun giocatore ha a disposizione 4 diverse azioni: stabilire una nuova rotta commerciale pescando una nuova carta dal mercato centrale; commerciare o raccogliere una determinata risorsa, giocando una carta dalla mano; completare una richiesta ed ottenerne i punti vittoria; riposarsi e riprendere in mano le carte precedentemente giocate. Dopo che uno dei giocatori è riuscito ad ottenere il suo quinto punto vittoria, viene giocato un ultimo round e dopo di esso il giocatore con il maggior numero di punti vittoria viene proclamato il carovaniere più abile!",
   },
 ];
 

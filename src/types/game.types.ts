@@ -8,6 +8,8 @@ export type Category =
   | "kids"
   | "management"
   | "investigatives"
+  | "deck building"
+  | "strategy"
   | "cooperative";
 
 export interface Game {

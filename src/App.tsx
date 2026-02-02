@@ -12,7 +12,8 @@ import GamesList from "./pages/GamesList/GamesList";
 import GameDescription from "./pages/GameDescription/GameDescription";
 import GameDetailPage from "./pages/GameDescriptionAlt/GameDetailPage";
 import AddedGamesList from "./pages/AddedGames/AddedGamesList";
-import { routes } from "./utils/routes";
+import { otherRoutes, routes } from "./utils/routes";
+import Natale_25 from "./pages/Natale25/Natale25";
 
 // const router = createBrowserRouter(
 //   [
@@ -62,6 +63,10 @@ const router = createHashRouter([
         element: <AddedGamesList className="pageWithHeader" />,
       },
     ],
+  },
+  {
+    path: otherRoutes.home,
+    element: <Natale_25 />,
   },
 ]);
 
